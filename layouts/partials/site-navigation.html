@@ -1,0 +1,21 @@
+{{ "<!-- site-navigation.html -->" | safeHTML }}
+<header class="[ site-header ]">
+<nav class="[ style-box ]" id="Site" aria-label="Website">
+<menu title="Website Navigation">
+  <li>
+    <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }} Home Page">Home</a>
+  </li>
+  {{- range .Site.Menus.main }} 
+  <li>
+    <a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+  </li>
+  {{- end }}
+  <li>
+    <a href="{{ "feed.xml" | absURL }}" rel="feed"
+      type="application/rss+xml" title="{{ $.Site.Title }} RSS Feed">
+    RSS
+    </a>
+  </li>
+</menu>
+</nav>
+</header>

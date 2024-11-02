@@ -1,0 +1,13 @@
+name = "Play-Lab"
+license = "MIT"
+licenselink = "https://github.com/mandaris/Play-Lab/blob/main/LICENSE"
+tags = ["dark", "dark mode", "light", "light mode"]
+features = ["rss", "categories", "mermaid", "table of contents"]
+
+[module]
+  [module.hugoVersion]
+    min = "0.117"
+
+[author]
+  name = "Mandaris Moore"
+  homepage = "https://MandarisMoore.com"
