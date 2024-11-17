@@ -1,0 +1,46 @@
+{{ "<!-- site-footer.html -->" | safeHTML }}
+<footer class="[ style-box ] [ site-footer ]" aria-label="Author and website information">
+  {{ partial "author-info-footer.html" . }}
+  {{- with  .Site.Params.description -}}
+  <p class="[ text-center ]">{{ . | safeHTML }}</p>
+  {{ end -}}
+    
+  <p class="[ text-center ]">
+  {{- with .Site.Copyright }}
+  {{ . | safeHTML }}
+  {{- else }}
+  &copy; {{ now.Year }}
+{{ end -}}
+  </p>
+{{ if .Param "themeDebug" }}
+<details 
+{{ if not .Params.showDebugInfo }}style="display: none;"{{ end }} 
+	class="[ debug ]">
+<summary>Site Debug Information</summary>
+<h2>Site Properties</h2>
+<pre>
+{{ printf "%#v \n" $.Site  }}
+</pre>
+
+<h2>.Site.Params Properties</h2>
+<pre>
+{{ printf "%#v \n" .Site.Params }}
+</pre>
+<h2>.Site.Author Properties</h2>
+<pre>
+{{ printf "%#v \n" .Site.Author }}
+
+{{ printf "%#v \n" $.Site.Author }}
+</pre>
+{{ range .Pages }}
+{{/* The context, ".", is now each one of the pages as it goes through the loop */}}
+{{ printf "%#v" . }}
+{{ end }}
+
+<h2>All variables scoped to the current context</h2>
+<pre>
+{{ printf "%#v" . }}    
+</pre>
+</details>
+{{- end }}
+</footer>

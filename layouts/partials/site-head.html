@@ -1,0 +1,115 @@
+<head>
+<meta name="theme_version" content="{{ .Site.Params.themeVersion }}" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+{{- if .IsHome -}}
+<title>{{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}" />
+<meta itemprop="name" content="{{ .Site.Title }}" />
+
+<meta name="description" 
+  content="{{ .Site.Params.itunes_description | safeHTML }}" />
+<meta property="og:description" 
+  content="{{ .Site.Params.itunes_description | safeHTML}}" />
+
+
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ .Site.Author.avatar }}" />
+<meta itemprop="image" content="{{ .Site.Author.avatar }}" />
+<meta name="twitter:card" content="summary" />
+{{ else }}
+{{ if and (isset .Params "title")  (ne .Params.Title "" )}}
+<title>{{ .Title }} - {{ .Site.Title}}</title>
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title}}" />
+<meta itemprop="name" content="{{ .Title }} - {{ .Site.Title}}" />
+{{ else }}
+{{ $niceDate := .Date.Format (default "January 2, 2006 3:04 PM" .Site.Params.date_format) }}
+{{- $niceTitle := printf " - %s" $.Site.Title  | printf "MicroPost %s%s" $niceDate | printf "%s"}}
+
+<title>{{ $niceTitle }}</title>
+<meta property="og:title" content="{{ $niceTitle }}" />
+<meta itemprop="name" content="{{ $niceTitle }}" />
+{{ end }}
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<meta name="description" content="{{ .Summary | safeHTML }}" />
+<meta property="og:description" content="{{ .Summary | safeHTML }}" />
+
+{{ if isset .Params "tags" -}}
+<meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}" />
+{{- end }}
+{{- with .Params.categories }}
+{{- range . }}
+<meta property="article:section" content="{{ . }}" />
+{{- end }}
+{{ end }}
+<meta property="og:type" content="article" />
+
+{{ $iso8601 := "2006-01-02T15:04:05Z07:00" }}
+{{- with .PublishDate }}
+<meta property="article:published_time" 
+  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+<meta itemprop="datePublished"
+  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+{{ end }}
+{{- with .Lastmod }}
+<meta property="article:modified_time" 
+  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+<meta itemprop="dateModified"
+  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+{{ end }}
+
+{{- with .Params.audio }}
+{{- range . }}<meta property="og:audio" content="{{ . | absURL }}" />{{ end }}
+{{ end }}
+{{- with .Params.videos }}
+{{- range . }}<meta property="og:video" content="{{ . | absURL }}" />{{ end }}
+{{ end }}
+
+{{ with .Params.images -}}
+{{ "<!-- .Params.images -->" | safeHTML }}
+<meta name="twitter:card" content="summary_large_image" />
+{{- range first 6 . }}
+<meta property="og:image" content="{{ . | absURL }}" />
+<meta itemprop="image" content="{{ . | absURL }}" />
+{{- end -}}
+{{- else -}}
+{{ "<!-- No .Params.images -->" | safeHTML }}
+<meta property="og:image" content="{{ .Site.Author.avatar }}" />
+<meta itemprop="image" content="{{ .Site.Author.avatar }}" />
+<meta name="twitter:card" content="summary" />
+{{- end -}}
+{{ end }}
+
+
+<meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="article:author" content="{{ .Site.BaseURL }}" />
+
+{{ with .Site.Author.name -}}
+<meta name="author" content="{{ . }}" />
+{{- end }}
+{{ with .Site.Params.twitter_username }}
+<link rel="me" href="https://twitter.com/{{ . }}" />
+<meta name="twitter:site" content="@{{ . }}" />
+<meta name="twitter:creator" content="@{{ . }}" />
+<meta property="twitter:domain" content="{{ (urls.Parse site.BaseURL).Host }}">
+{{- end }}
+
+{{ if .Param "math" }}
+{{ partialCached "math.html" . }}
+{{ end }}
+
+{{ "<!-- CSS Links  and Themes -->" | safeHTML }}
+<link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/play-lab.css" | relURL }}?{{ .Site.Params.theme_seconds }}" />
+<meta name="supported-color-schemes" content="light dark" />
+<meta name="theme-color" content="#5e81ac" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#bf616a" media="(prefers-color-scheme: dark)" />
+
+{{ "<!-- Microblog header begin-->" | safeHTML }}
+{{ partial "microblog_head.html" . }}
+{{ "<!-- Microblog header end -->" | safeHTML }}
+</head>

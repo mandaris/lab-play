@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode | default "en-US" }}" 
   prefix="og: https://ogp.me/ns#"
   itemscope itemtype="http://schema.org/WebPage" >
-
+<head><link rel="stylesheet" href="{{ "css/play-lab.css" | relURL }}?{{ .Site.Params.theme_seconds }}" /></head>
 <body class=" body_wrapper ">
 {{ partial "site-navigation.html" . }}
 <main class="contentSection">

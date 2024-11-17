@@ -1,0 +1,347 @@
+:root {
+  /* Nord colour palette from: 
+  https://github.com/arcticicestudio/nord/blob/develop/src/nord.css
+  * Used here under MIT License
+  
+  Formated by Jessica Smith (jayeless.net)
+  */
+
+  --nordDark1: #2e3440;
+  /* Polar Night - darkest */
+  --nordDark2: #3b4252;
+  /* Polar Night - second-darkest */
+  --nordDark3: #434c5e;
+  /* Polar Night - third-darkest */
+  --nordDark4: #4c566a;
+  /* Polar Night - fourth-darkest */
+  --nordLight1: #d8dee9;
+  /* Snow Storm - third-lightest */
+  --nordLight2: #e5e9f0;
+  /* Snow Storm - second-lightest */
+  --nordLight3: #eceff4;
+  /* Snow Storm - lightest */
+  --nordTeal: #8fbcbb;
+  /* Frost - teal accent colour */
+  --nordAqua: #88c0d0;
+  /* Frost - aqua accent colour */
+  --nordLightBlue: #81a1c1;
+  /* Frost - lighter blue accent colour */
+  --nordBlue: #5e81ac;
+  /* Frost - darker blue accent colour */
+  --nordRed: #bf616a;
+  /* Aurora - red accent colour */
+  --nordOrange: #d08770;
+  /* Aurora - orange accent colour */
+  --nordYellow: #ebcb8b;
+  /* Aurora - yellow accent colour */
+  --nordGreen: #a3be8c;
+  /* Aurora - green accent colour */
+  --nordPurple: #b48ead;
+  /* Aurora - purple accent colour */
+
+
+  --background: var(--nordLight1);
+  --background-alt: var(--nordLight3);
+  --background-mid: var(--nordLight2);
+  --text: var(--nordDark1);
+  --text-alt: var(--nordDark3);
+
+  --accent: var(--nordBlue);
+  accent-color: var(--accent);
+  --accent-alt: var(--nordAqua);
+  --accent-opposite: var(--nordRed);
+  --accent-opposite-alt: var(--nordYellow);
+
+  /* New method to automate sizes   */
+  interpolate-size: allow-keywords;
+
+  /* Global Border Radius */
+  --border-radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, Verdana, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+  line-height: 1.6;
+  font-size: 1.3rem;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+
+  text-wrap: pretty;
+}
+
+body {
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  margin: 3px;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+/* Composition */
+.site-header {
+  grid-area: topping;
+}
+
+.contentSection {
+  grid-area: contentSection;
+}
+
+.site-footer {
+  grid-area: informational;
+  container-type: inline-size;
+  height: fit-content;
+}
+
+.body_class {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "topping"
+    "contentSection"
+    "informational";
+  justify-content: center;
+  background-color: var(--background);
+}
+
+@media (min-width: 1100px) {
+
+  .body_class {
+    /* grid-template-columns: minmax(80ch, 1fr) minmax(0, 1fr); */
+    /* grid-template-columns: repeat(auto-fill, minmax(70ch, 1fr)); */
+    grid-template-columns: minmax(700px, 750px) minmax(200px, 375px);
+    justify-content: center;
+    grid-template-areas:
+      "topping topping"
+      "contentSection informational";
+  }
+}
+
+@container (min-width: 60ch) {
+  .FloatRight {
+    max-width: calc(50% - 2em);
+    float: right;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .FloatLeft {
+    max-width: calc(50% - 2em);
+    float: left;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+
+a:not([class]) {
+  color: var(--text-alt);
+  text-underline-offset: 0.15em;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-alt);
+  text-decoration-thickness: .05em;
+  text-decoration-skip-ink: all;
+  transition: all .5s;
+  transition-timing-function: cubic-bezier(.7, 0, .3, 1);
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+textarea:not([rows]) {
+  min-height: 10em
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img,
+picture,
+video,
+iframe,
+lite-youtube,
+canvas,
+svg {
+  display: block;
+  max-width: 85%;
+  height: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  border-radius: var(--border-radius, 0.5rem);
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
+}
+
+lite-youtube {
+  max-width: 85% !important;
+}
+
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: all .5s;
+  transition-timing-function: cubic-bezier(.7, 0, .3, 1);
+  line-height: normal;
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  color: var(--text-alt);
+  text-underline-offset: 0.15em;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-alt);
+  text-decoration-thickness: .05em;
+  text-decoration-skip-ink: all;
+  transition: all .5s;
+  transition-timing-function: cubic-bezier(.7, 0, .3, 1);
+}
+
+a:hover,
+a:focus {
+  /* box-shadow: inset 0 -1.5em 0 var(--accent-alt); */
+  color: var(--accent-opposite);
+  text-decoration-color: var(--accent-opposite-alt);
+  text-decoration-thickness: .1em;
+}
+
+a.no-decoration {
+  color: var(--text-alt);
+  box-shadow: none;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px var(--accent-alt);
+}
+
+a:active {
+  color: var(--accent);
+  text-decoration-color: var(--accent-opposite);
+}
+
+
+a h1 {
+  color: var(--text-alt);
+  text-decoration-color: var(--accent-opposite);
+  /* width: fit-content; */
+}
+
+a:hover h1,
+a:focus h1 {
+  color: var(--accent-opposite);
+  text-decoration-color: var(--accent-opposite-alt);
+}
+
+:target {
+  scroll-margin-block: 3ex;
+}
+
+/* Utility */
+.flow>*+* {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.radius {
+  border-radius: var(--border-radius, 0.5rem);
+}
+
+.object-effect {
+  border: 1px solid black;
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
+  background-color: var(--background-alt);
+  padding: .5em;
+}
+
+.lozenge {
+  background-color: var(--accent);
+  color: var(--background);
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+a.footnote-backref {
+  text-decoration: none;
+}
+
+#skip-to-main-content-link {
+  position: absolute;
+  top: -2em;
+  left: 0;
+  max-width: 100%;
+  background-color: var(--accent);
+  color: var(--background);
+  text-align: center;
+  width: 100%;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+#skip-to-main-content-link:focus {
+  top: 0;
+  z-index: 99;
+}
+
+.highlight {
+  max-width: 100%;
+  border-radius: 5px;
+  overflow: auto;
+  margin: 0;
+}
+
+.lntable {
+  width: 100%
+}
+
+table {
+  margin: auto;
+  min-width: 50%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  vertical-align: top;
+  padding: .38em;
+}
+
+
+tr:nth-child(even of :not([hidden]))>td {
+  background: var(--background);
+}
+
+
+thead th,
+th {
+  font-weight: bold;
+  color: var(--text-alt);
+  border-bottom: 1px solid var(--accent-alt);
+}
+
+/* Allow for gist to have their own styling */
+div.gist td {
+  background: var(--color-canvas-default) !important;
+}
+/* Block */
