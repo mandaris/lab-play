@@ -161,7 +161,7 @@ a:not([class]) {
 }
 
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 3ex;
 }
 
 textarea:not([rows]) {
