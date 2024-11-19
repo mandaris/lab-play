@@ -5,8 +5,8 @@
 <head><link rel="stylesheet" href="{{ "css/play-lab.css" | relURL }}?{{ .Site.Params.theme_seconds }}" /></head>
 <body class=" body_wrapper ">
 {{ partial "site-navigation.html" . }}
-<main class="contentSection">
-  {{ block "main" .}}{{ end }}
+<main class="contentSection" id="main">
+{{ block "main" .}}{{ end }}
 </main>
 
 </body>

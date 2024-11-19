@@ -240,6 +240,9 @@ a:active {
   text-decoration-color: var(--accent-opposite);
 }
 
+a.footnote-backref {
+  text-decoration: none;
+}
 
 a h1 {
   color: var(--text-alt);
@@ -280,10 +283,6 @@ a:focus h1 {
   text-align: center;
   display: inline-block;
   padding: 5px 10px;
-}
-
-a.footnote-backref {
-  text-decoration: none;
 }
 
 #skip-to-main-content-link {
@@ -345,3 +344,9 @@ div.gist td {
   background: var(--color-canvas-default) !important;
 }
 /* Block */
+
+.site-header {
+	& menu li {
+		display: inline;
+	}
+}
