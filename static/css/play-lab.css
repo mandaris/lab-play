@@ -214,7 +214,7 @@ a:not([class]) {
   text-underline-offset: 0.15em;
   text-decoration-line: underline;
   text-decoration-color: var(--accent-alt);
-  text-decoration-thickness: .05em;
+  text-decoration-thickness: .1em;
   text-decoration-skip-ink: all;
   transition: all .5s;
   transition-timing-function: cubic-bezier(.7, 0, .3, 1);
