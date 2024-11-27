@@ -40,17 +40,19 @@
   /* Aurora - purple accent colour */
 
 
-  --background: var(--nordLight1);
+  --background: var(--nordDark1);
   --background-alt: var(--nordLight3);
   --background-mid: var(--nordLight2);
   --text: var(--nordDark1);
-  --text-alt: var(--nordDark3);
+  --text-alt: var(--nordDark2);
 
   --accent: var(--nordBlue);
   accent-color: var(--accent);
   --accent-alt: var(--nordAqua);
   --accent-opposite: var(--nordRed);
   --accent-opposite-alt: var(--nordYellow);
+
+  scrollbar-color: var(--accent) var(--background);
 
   /* New method to automate sizes   */
   interpolate-size: allow-keywords;
@@ -102,19 +104,29 @@ body {
   grid-area: contentSection;
 }
 
-.site-footer {
+.information-area {
   grid-area: informational;
-  container-type: inline-size;
+}
+
+.author {
+  grid-area: informational;
+  height: fit-content;
+}
+
+.site-footer {
+  grid-area: bottoms;
   height: fit-content;
 }
 
 .body_class {
   display: grid;
   gap: 10px;
+  grid-template-columns: minmax(300px, 65ch);
   grid-template-areas:
     "topping"
     "contentSection"
-    "informational";
+    "informational"
+    "bottoms";
   justify-content: center;
   background-color: var(--background);
 }
@@ -128,7 +140,8 @@ body {
     justify-content: center;
     grid-template-areas:
       "topping topping"
-      "contentSection informational";
+      "contentSection informational"
+      "bottoms bottoms";
   }
 }
 
@@ -148,7 +161,7 @@ body {
   }
 }
 
-
+/* Anchors */
 a:not([class]) {
   color: var(--text-alt);
   text-underline-offset: 0.15em;
@@ -181,8 +194,7 @@ picture,
 video,
 iframe,
 lite-youtube,
-canvas,
-svg {
+canvas {
   display: block;
   max-width: 85%;
   height: auto;
@@ -209,7 +221,8 @@ h6 {
   text-wrap: balance;
 }
 
-a:not([class]) {
+a:not([class]),
+a.u-url {
   color: var(--text-alt);
   text-underline-offset: 0.15em;
   text-decoration-line: underline;
@@ -220,8 +233,10 @@ a:not([class]) {
   transition-timing-function: cubic-bezier(.7, 0, .3, 1);
 }
 
-a:hover,
-a:focus {
+a:not([class]):hover,
+a.u-url:hover,
+a:not([class]):focus,
+a.u-url:focus {
   /* box-shadow: inset 0 -1.5em 0 var(--accent-alt); */
   color: var(--accent-opposite);
   text-decoration-color: var(--accent-opposite-alt);
@@ -235,7 +250,7 @@ a.no-decoration {
   text-shadow: 1px 1px 1px var(--accent-alt);
 }
 
-a:active {
+a:not([class])active {
   color: var(--accent);
   text-decoration-color: var(--accent-opposite);
 }
@@ -278,11 +293,12 @@ a:focus h1 {
 
 .lozenge {
   background-color: var(--accent);
-  color: var(--background);
+  color: var(--background-alt);
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 0px 10px;
+  border-radius: 1em;
 }
 
 #skip-to-main-content-link {
@@ -291,7 +307,7 @@ a:focus h1 {
   left: 0;
   max-width: 100%;
   background-color: var(--accent);
-  color: var(--background);
+  color: var(--background-alt);
   text-align: center;
   width: 100%;
   border-bottom-left-radius: var(--border-radius);
@@ -307,28 +323,45 @@ a:focus h1 {
   max-width: 100%;
   border-radius: 5px;
   overflow: auto;
-  margin: 0;
+
+  .lntable {
+    width: 100%;
+  }
+
+  .chroma {
+    overflow-x: auto;
+  }
+
+  .lnt, .hl {
+    display: flex;
+  }
+
+  .line {
+    margin-inline-start: 0.5rem;
+  }
+
+  .lntd .line {
+    margin-inline-start: 0px;
+  }
 }
 
-.lntable {
+/* .lntable {
   width: 100%
-}
+} */
 
-table {
+table:not([class]) {
   margin: auto;
-  min-width: 50%;
   border-collapse: collapse;
-}
-
-th,
-td {
-  vertical-align: top;
-  padding: .38em;
-}
-
-
+  display: block;
+  width: 100%;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow-x: auto;
+  
+  /* scrollbar-width: thin; */
+  
 tr:nth-child(even of :not([hidden]))>td {
-  background: var(--background);
+  background: var(--background-mid);
 }
 
 
@@ -338,15 +371,19 @@ th {
   color: var(--text-alt);
   border-bottom: 1px solid var(--accent-alt);
 }
-
-/* Allow for gist to have their own styling */
-div.gist td {
-  background: var(--color-canvas-default) !important;
 }
+
+
+
+
 /* Block */
 
 .site-header {
 	& menu li {
 		display: inline;
 	}
+}
+
+pre {
+  overflow-x: auto;
 }

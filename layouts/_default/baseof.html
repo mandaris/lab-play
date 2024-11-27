@@ -2,14 +2,15 @@
 <html lang="{{ .Site.LanguageCode | default "en-US" }}" 
   prefix="og: https://ogp.me/ns#"
   itemscope itemtype="http://schema.org/WebPage" >
-<head><link rel="stylesheet" href="{{ "css/play-lab.css" | relURL }}?{{ .Site.Params.theme_seconds }}" /></head>
-<body class=" body_class ">
+  {{ partial "site-head.html" . }}
+<body class="body_class ">
   <a class="accessibility_label" href="#main" id="skip-to-main-content-link">Skip to main content</a>
 {{ partial "site-navigation.html" . }}
-<main class="contentSection" id="main">
+<main class="contentSection flow" id="main">
 {{ block "main" .}}{{ end }}
 </main>
-
+{{ partial "author-info-aside.html" . }}
+{{ partial "site-footer.html" . }}
 </body>
 
 </html>

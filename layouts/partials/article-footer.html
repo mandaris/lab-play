@@ -1,13 +1,13 @@
 {{ "<!-- article-footer.html -->" | safeHTML }}
 <footer>
-    <p class="[ left-column ]">
+    <p class="left-column">
     {{- with .Param "categories" -}}
     {{ range $CategoryArray, $Category := (. | sort) -}}
         {{- if gt $CategoryArray 0 -}}
         <span> •</span>
         {{- end }}
         <a href="/categories/{{ $Category | urlize }}" 
-          class="p-category articleSection" rel="tag"
+          class="p-category articleSection lozenge" rel="tag"
           aria-label="Archive of post with the {{ $Category }} category."
           itemprop="articleSection">
             {{ $Category }}
@@ -32,8 +32,8 @@
     <meta itemprop="wordCount" content="{{ .WordCount }}" />    
     </p>
     
-    <p class="[ right-column ]">
-        <a href="{{ .Permalink }}" class="[ u-uid ]">
+    <p class="right-column">
+        <a href="{{ .Permalink }}" class="u-uid">
         <time class="dt-published" itemprop="dateCreated datePublished"
             {{ 
             printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") 
@@ -48,7 +48,7 @@
     {{ "<!-- Debugging Details --> " | safeHTML }}
     <details
     {{ if not .Params.showDebugInfo }}style="display: none;"{{ end }}
-    class="[ debug ]">
+    class="debug">
         <summary>Debug Information</summary>
         <h1>Permalink</h1>
         <code>

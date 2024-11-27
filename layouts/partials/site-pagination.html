@@ -1,26 +1,22 @@
 {{ "<!-- Site Pagination -->" | safeHTML }}
 {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) }}
 <nav role="navigation" id="site-pagination" 
-  aria-label="Pagination" class="[ pagination ]">
+  aria-label="Pagination" class="pagination">
   {{- if $paginator.HasPrev -}}
-  <p class="[ nav_prev ]">
-	  <a href="{{ $paginator.Prev.URL }}" class="[ no-decoration ]" 
-      role="presentation" title="Newer Posts"
-      aria-hidden="true">←</a>
-    <a href="{{ $paginator.Prev.URL }}" rel="prev">
-      Newer Posts
+  <p class="nav_prev">
+	  <a href="{{ $paginator.Prev.URL }}" 
+      class="lozenge" rel="prev">
+      <span aria-hidden="true">←</span> Newer Posts
     </a>
   </p>
     {{- end }}
 
   {{ if $paginator.HasNext -}}
-  <p class="[ nav_next ]">
-    <a href="{{ $paginator.Next.URL }}" rel="next">
-        Older Posts 
+  <p class="nav_next">
+    <a href="{{ $paginator.Next.URL }}"
+      class="lozenge" rel="next">
+      Older Posts <span aria-hidden="true">→</span>
     </a>
-	<a href="{{ $paginator.Next.URL }}" class="[ no-decoration ]" 
-  role="presentation" title="Older Posts"
-  aria-hidden="true">→</a>
   </p>
     {{- end }}
 </nav>

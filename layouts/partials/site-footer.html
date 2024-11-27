@@ -1,11 +1,11 @@
 {{ "<!-- site-footer.html -->" | safeHTML }}
-<footer class="[ style-box ] [ site-footer ]" aria-label="Author and website information">
-  {{ partial "author-info-footer.html" . }}
+<footer class="object-effect | site-footer" aria-label="Author and website information">
+  
   {{- with  .Site.Params.description -}}
-  <p class="[ text-center ]">{{ . | safeHTML }}</p>
+  <p class="text-center">{{ . | safeHTML }}</p>
   {{ end -}}
     
-  <p class="[ text-center ]">
+  <p class="text-center">
   {{- with .Site.Copyright }}
   {{ . | safeHTML }}
   {{- else }}
@@ -15,7 +15,7 @@
 {{ if .Param "themeDebug" }}
 <details 
 {{ if not .Params.showDebugInfo }}style="display: none;"{{ end }} 
-	class="[ debug ]">
+	class="debug">
 <summary>Site Debug Information</summary>
 <h2>Site Properties</h2>
 <pre>

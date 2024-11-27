@@ -1,18 +1,18 @@
 {{ define "main" }}
 {{ "<!-- list.archivehtml.html -->" | safeHTML }}
-<div class="[ style-box ]"><h1 class="list-title-header">Archive</h1></div>
+<div class="style-box"><h1 class="list-title-header">Archive</h1></div>
 	{{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 	{{ if gt (len $list) 0 }}
-		<section class="[ style-box ]">
+		<section class="style-box">
 		<h2>Categories</h2>
-		<div class="[ archive_categories ]">
+		<div class="archive_categories">
 			{{ partial "categories-with-count.html" . }}
 		</div>
 		</section>
 	{{ end }}
 	
 	{{ $list := (where .Site.Pages "Type" "post") }}
-	<section class="[ archive_posts ] [ h-feed ] [ style-box ]">
+	<section class="archive_posts | h-feed | style-box">
 	<h2 class="p-name">All Posts</h2>
 		{{ range $list }}
 	
