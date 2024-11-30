@@ -1,5 +1,5 @@
 {{ "<!-- article-footer.html -->" | safeHTML }}
-<footer>
+<footer class="article-footer">
     <p class="left-column">
     {{- with .Param "categories" -}}
     {{ range $CategoryArray, $Category := (. | sort) -}}
