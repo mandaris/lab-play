@@ -1,0 +1,85 @@
+/* Micro.blog specific elements */
+
+.microblog_conversation {
+    grid-area: contentSection;
+  }
+  
+  .microblog_reply_form,
+  .microblog_post {
+    padding: 1rem;
+    margin-top: 1rem;
+    /* border-top: 1px solid var(--background-alt); */
+    background-color: var(--background-alt);
+    border-radius: 5px;
+    box-shadow: 
+      0px 2px 7px var(--box-shadow-color-1),
+      0px 7px 13px -3px var(--accent),
+      inset 0px -3px 0px var(--box-shadow-color-3);
+  }
+  
+  .microblog_avatar {
+    display: inline;
+    vertical-align: middle;
+    width: 75px;
+    max-width: 75px !important;
+    margin: 0 10px 10px 0;
+    float: left;
+  }
+  
+  .microblog_fullname {
+    font-weight: bold;
+    color: var(--accent);
+  }
+  
+  .microblog_text p {
+    margin-top: 0px;
+  }
+  
+  .microblog_time {
+    text-align: right;
+  }
+  
+  .microblog_reply_signin {
+      margin-top: 0px;
+  
+  }
+  
+  .microblog_reply_textarea > textarea {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .bookshelf_book {
+    min-height: 140px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  
+  .bookshelf_book img {
+    min-height: 100px;
+    width: 80px !important;
+    min-width: 80px !important;
+    max-height: 140px !important;
+    margin-right: 1em !important;
+    margin-top: 0;
+    padding-right: 0 !important;
+    border-radius: 5px !important;
+    background-color: var(--background-alt);
+    justify-content: center;
+  }
+  
+  .bookshelf_author {
+    color: var(--text-alt);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .bookshelf_title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .bluesky-embed {
+    margin-right: auto;
+    margin-left: auto;
+  }

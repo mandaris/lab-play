@@ -6,38 +6,22 @@
   Formated by Jessica Smith (jayeless.net)
   */
 
-  --nordDark1: #2e3440;
-  /* Polar Night - darkest */
-  --nordDark2: #3b4252;
-  /* Polar Night - second-darkest */
-  --nordDark3: #434c5e;
-  /* Polar Night - third-darkest */
-  --nordDark4: #4c566a;
-  /* Polar Night - fourth-darkest */
-  --nordLight1: #d8dee9;
-  /* Snow Storm - third-lightest */
-  --nordLight2: #e5e9f0;
-  /* Snow Storm - second-lightest */
-  --nordLight3: #eceff4;
-  /* Snow Storm - lightest */
-  --nordTeal: #8fbcbb;
-  /* Frost - teal accent colour */
-  --nordAqua: #88c0d0;
-  /* Frost - aqua accent colour */
-  --nordLightBlue: #81a1c1;
-  /* Frost - lighter blue accent colour */
-  --nordBlue: #5e81ac;
-  /* Frost - darker blue accent colour */
-  --nordRed: #bf616a;
-  /* Aurora - red accent colour */
-  --nordOrange: #d08770;
-  /* Aurora - orange accent colour */
-  --nordYellow: #ebcb8b;
-  /* Aurora - yellow accent colour */
-  --nordGreen: #a3be8c;
-  /* Aurora - green accent colour */
-  --nordPurple: #b48ead;
-  /* Aurora - purple accent colour */
+  --nordDark1: #2e3440;  /* Polar Night - darkest */
+  --nordDark2: #3b4252;  /* Polar Night - second-darkest */
+  --nordDark3: #434c5e;  /* Polar Night - third-darkest */
+  --nordDark4: #4c566a;  /* Polar Night - fourth-darkest */
+  --nordLight1: #d8dee9;  /* Snow Storm - third-lightest */
+  --nordLight2: #e5e9f0;  /* Snow Storm - second-lightest */
+  --nordLight3: #eceff4;  /* Snow Storm - lightest */
+  --nordTeal: #8fbcbb;  /* Frost - teal accent colour */
+  --nordAqua: #88c0d0;  /* Frost - aqua accent colour */
+  --nordLightBlue: #81a1c1;  /* Frost - lighter blue accent colour */
+  --nordBlue: #5e81ac;  /* Frost - darker blue accent colour */
+  --nordRed: #bf616a;  /* Aurora - red accent colour */
+  --nordOrange: #d08770;  /* Aurora - orange accent colour */
+  --nordYellow: #ebcb8b;  /* Aurora - yellow accent colour */
+  --nordGreen: #a3be8c;  /* Aurora - green accent colour */
+  --nordPurple: #b48ead;  /* Aurora - purple accent colour */
 
 
   --background: var(--nordDark1);
@@ -47,9 +31,9 @@
   --text-alt: var(--nordDark2);
 
   --accent: var(--nordBlue);
-  --accent-alt: var(--nordAqua);
+  --accent-alt: var(--nordTeal);
   --accent-opposite: var(--nordRed);
-  --accent-opposite-alt: var(--nordYellow);
+  --accent-opposite-alt: var(--nordOrange);
 
   scrollbar-color: var(--accent) var(--background);
 
@@ -67,6 +51,15 @@
   --border-radius: 10px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--nordDark3);
+    --background-alt: var(--nordDark1);
+	  --background-mid: var(--nordDark2);
+    --text: var(--nordLight3);
+    --text-alt: var(--nordLight2);
+  }
+}
 *,
 *::before,
 *::after {
@@ -123,6 +116,15 @@ body {
   height: fit-content;
 }
 
+.post-body {
+  container-type: inline-size;
+  overflow-y: auto;
+}
+
+.debug {
+  grid-area: debug;
+}
+
 .body_class {
   display: grid;
   gap: 10px;
@@ -141,7 +143,7 @@ body {
   .body_class {
     /* grid-template-columns: minmax(80ch, 1fr) minmax(0, 1fr); */
     /* grid-template-columns: repeat(auto-fill, minmax(70ch, 1fr)); */
-    grid-template-columns: minmax(700px, 750px) minmax(200px, 375px);
+    grid-template-columns: minmax(750px, 800px) minmax(200px, 375px);
     justify-content: center;
     grid-template-areas:
       "topping topping"
@@ -172,24 +174,6 @@ body {
     "debug debug"; 
 }
 
-
-
-/* Anchors */
-a:not([class]) {
-  color: var(--text-alt);
-  text-underline-offset: 0.15em;
-  text-decoration-line: underline;
-  text-decoration-color: var(--accent-alt);
-  text-decoration-thickness: .05em;
-  text-decoration-skip-ink: all;
-  transition: all .5s;
-  transition-timing-function: cubic-bezier(.7, 0, .3, 1);
-}
-
-:target {
-  scroll-margin-block: 3ex;
-}
-
 textarea:not([rows]) {
   min-height: 10em
 }
@@ -206,7 +190,7 @@ img,
 picture,
 video,
 iframe,
-lite-youtube,
+.lite-youtube,
 canvas {
   display: block;
   max-width: 85%;
@@ -217,8 +201,44 @@ canvas {
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
 }
 
-lite-youtube {
+.lite-youtube {
   max-width: 85% !important;
+}
+
+p > img {
+  display: inline-block;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+address {
+  font-style: normal;
+}
+
+audio {
+  width: 100%;
+  margin-right: 1em;
+  margin-left: 1em;
+  max-width: calc(100% - 2em);
+  border-radius: 7px;
+  color: var(--accent);
+  background: var(--background);
+}
+
+audio::-webkit-media-controls-panel {
+	color: var(--accent);
+  background-color: var(--background);
+}
+
+audio::-webkit-media-controls-play-button {
+  color: var(--accent-alt);
+}
+
+blockquote {
+  border-left: 5px solid var(--accent);
+  padding-left: .5rem;
+  margin-left: .5rem;
+  overflow-y: auto;
 }
 
 header,
@@ -234,7 +254,22 @@ h6 {
   text-wrap: balance;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+pre, code, kbd, samp {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+/* Anchors */
+
 a:not([class]),
+a.footnote-ref,
 a.u-url {
   color: var(--text-alt);
   text-underline-offset: 0.15em;
@@ -248,11 +283,13 @@ a.u-url {
 
 a:not([class]):hover,
 a.u-url:hover,
+a.footnote-ref:hover,
 a:not([class]):focus,
+a.footnote-ref:focus,
 a.u-url:focus {
   /* box-shadow: inset 0 -1.5em 0 var(--accent-alt); */
-  color: var(--accent-opposite);
-  text-decoration-color: var(--accent-opposite-alt);
+  color: var(--accent-opposite-alt);
+  text-decoration-color: var(--accent-opposite);
   text-decoration-thickness: .1em;
 }
 
@@ -280,13 +317,164 @@ a h1 {
 
 a:hover h1,
 a:focus h1 {
-  color: var(--accent-opposite);
-  text-decoration-color: var(--accent-opposite-alt);
+  color: var(--accent-opposite-alt);
+  text-decoration-color: var(--accent-opposite);
 }
 
 :target {
   scroll-margin-block: 3ex;
 }
+
+a.footnote-ref::before {
+  content: '[';
+}
+
+a.footnote-ref::after {
+  content: ']';
+}
+
+p > code, li > code, kbd, samp {
+  background-color: var(--background-mid);
+  padding: 3px;
+  border-radius: 5px;
+  border: solid var(--accent) 1px;
+}
+
+
+
+/* ::selection, */
+mark {
+  background-color: var(--nordYellow);
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+/* Making the mark tag more accessible.
+Found at the following location.
+https://www.tpgi.com/short-note-on-making-your-mark-more-accessible/
+*/
+mark::before, mark::after {
+  content:" [highlight start] ";
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+mark::after {
+  content:" [highlight end] ";
+}
+
+abbr {
+  text-underline-offset: 0.15em;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: .05em;
+  cursor: help;
+}
+
+hr {
+  color: var(--accent);
+  overflow: auto;
+}
+
+dt {
+  font-weight: bold;
+  color: var(--text-alt);
+}
+
+dd {
+  margin-inline-start: 1em;
+}
+
+rt {
+  color: var(--text-alt);
+}
+
+del {
+  text-decoration-line: line-through;
+  text-decoration-style: wavy;
+  text-decoration-thickness: .075em;
+  text-decoration-color: hsla(0 100% 52.9% / 0.7);
+}
+
+ins {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: .05em;
+  text-underline-offset: 0.15em;
+  text-decoration-color: limegreen;
+}
+
+s {
+  text-decoration-thickness: .075em;
+  text-decoration-color: hsla(0 100% 52.9% / 0.7);
+}
+
+ins[cite]:after,
+del[cite]:after {
+  content: " (" attr(cite) ")";
+  font-size: 75%;
+  line-height: 0;
+  color: var(--text-alt);
+}
+
+li::marker {
+  color: var(--text-alt);
+}
+
+
+/* task list and its checkboxes */
+ul > li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-inline-start: -1rem;
+}
+
+ul > li:has(> input[type="checkbox"])::before {
+  content: "\200B"; /* accessibilty for Safari https://developer.mozilla.org/en-US/docs/Web/CSS/list-style */
+}
+
+/* Taken from the Hugo Relearn Theme */
+/* https://themes.gohugo.io/themes/hugo-theme-relearn/ */
+/* https://moderncss.dev/pure-css-custom-checkbox-style/ */
+ul > li > input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--INTERNAL-MAIN-BG-color); /* box background */
+  border: 0.15rem solid currentColor;
+  border-radius: 0.15rem;
+  color: var(--INTERNAL-MAIN-TEXT-color);
+  display: inline-grid;
+  font: inherit;
+  height: 1.15rem;
+  margin: 0;
+  place-content: center;
+  transform: translateY(-0.075rem);
+  width: 1.15rem;
+}
+
+ul > li > input[type="checkbox"]::before {
+  box-shadow: inset 1rem 1rem var(--accent);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  content: "";
+  height: 0.65rem;
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  width: 0.65rem;
+  /* Windows High Contrast Mode fallback must be last */
+  background-color: CanvasText;
+}
+
+ul > li > input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
 
 /* Utility */
 .flow>*+* {
@@ -317,7 +505,7 @@ a:focus h1 {
   border-radius: 1em;
 }
 
-@container (min-width: 60ch) {
+@container (min-width: 50ch) {
   .FloatRight {
     max-width: calc(50% - 2em);
     float: right;
@@ -351,6 +539,10 @@ a:focus h1 {
   z-index: 99;
 }
 
+#plugin-container > a {
+  display: inline-block;
+}
+
 .highlight {
   max-width: 100%;
   border-radius: 5px;
@@ -361,7 +553,7 @@ a:focus h1 {
   }
 
   .chroma {
-    overflow-x: auto;
+    overflow-x: scroll;
   }
 
   .lnt, .hl {
@@ -377,10 +569,6 @@ a:focus h1 {
   }
 }
 
-/* .lntable {
-  width: 100%
-} */
-
 table:not([class]) {
   margin: auto;
   border-collapse: collapse;
@@ -390,25 +578,51 @@ table:not([class]) {
   white-space: nowrap;
   overflow-x: auto;
   
-  /* scrollbar-width: thin; */
+  thead th,
+  th {
+    font-weight: bold;
+    color: var(--text-alt);
+    border-bottom: 1px solid var(--accent-alt);
+  }
   
-tr:nth-child(even of :not([hidden]))>td {
-  background: var(--background-mid);
+  tr:nth-child(even of :not([hidden]))>td {
+    background: var(--background-mid);
+  }
 }
 
 
-thead th,
-th {
-  font-weight: bold;
-  color: var(--text-alt);
-  border-bottom: 1px solid var(--accent-alt);
-}
+.optional {
+  display: none;
 }
 
+.optional:has(a, p, img) {
+	display: block;
+	grid-area: informational;
+}
 
-
+pre.mermaid {
+  text-align: center;
+}
 
 /* Block */
+
+.pagination {
+  margin-top: 1rem;
+  margin-bottom: 0px;
+  display: grid;
+  grid-template-columns: 2;
+
+  .nav_prev {
+    grid-column: 1;
+    text-align: left;
+  }
+  .nav_next {
+    grid-column: 2;
+    text-align: right;
+  }
+}
+
+
 
 .site-header {
 	& menu li {
@@ -416,8 +630,65 @@ th {
 	}
 }
 
-pre {
-  overflow-x: auto;
+.TableOfContents {
+  display: hidden;
+  margin: 0 auto;
+  padding: 7px;
+  max-width: 90%;
+
+
+}
+
+.TableOfContents:has(ul) {
+  display: block;
+}
+
+.alert {
+  
+  /* p:last-child {
+      margin-bottom: 0;
+  }
+
+  p {
+      margin-left: 20px;
+  } */
+
+  .alert-title {
+      position: absolute;
+      left: 16px;
+      margin-top: 17px;
+      font-size: 1.2em;
+
+      .alert-icon {
+          width: 1.2em;
+          height: 1.2em;
+      }
+  }
+
+  &.alert-warning {
+      background: hsla(30, 80%, 70%, 0.15);
+      border-left: 5px solid hsl(30, 80%, 70%);
+  }
+
+  &.alert-important {
+      background: hsla(261, 61%, 64%, 0.15);
+      border-left: 5px solid hsl(261, 61%, 64%);
+  }
+
+  &.alert-note {
+      background: hsla(200, 65%, 65%, 0.15);
+      border-left: 5px solid hsl(200, 65%, 65%);
+  }
+
+  &.alert-tip {
+      background: hsla(140, 65%, 65%, 0.15);
+      border-left: 5px solid hsl(140, 65%, 65%);
+  }
+  
+  &.alert-caution {
+    background: hsla(0, 65%, 65%, 0.15);
+    border-left: 5px solid hsl(0, 65%, 65%);
+  }
 }
 
 
