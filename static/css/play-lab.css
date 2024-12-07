@@ -118,7 +118,7 @@ body {
 
 .post-body {
   container-type: inline-size;
-  overflow-y: auto;
+  height: fit-content;
 }
 
 .debug {
@@ -263,7 +263,7 @@ pre, code, kbd, samp {
 }
 
 pre {
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 /* Anchors */
@@ -312,7 +312,6 @@ a.footnote-backref {
 a h1 {
   color: var(--text-alt);
   text-decoration-color: var(--accent-opposite);
-  /* width: fit-content; */
 }
 
 a:hover h1,
@@ -622,9 +621,18 @@ pre.mermaid {
   }
 }
 
+.logo {
+  display: inline-block;
+  height: 1.5em;
+  margin: 0;
+  top: 3px;
+}
 
 
 .site-header {
+  & menu {
+    padding: inherit;
+  }
 	& menu li {
 		display: inline;
 	}
@@ -632,11 +640,7 @@ pre.mermaid {
 
 .TableOfContents {
   display: hidden;
-  margin: 0 auto;
   padding: 7px;
-  max-width: 90%;
-
-
 }
 
 .TableOfContents:has(ul) {
@@ -692,3 +696,26 @@ pre.mermaid {
 }
 
 
+.ico {
+  height: 1.15em;
+  width: 1.15em;
+  display: inline;
+  position: relative;
+  top: 3px;
+}
+.ico-sm .ico {
+  height: .8em;
+  width: .8em;
+}
+.ico-md .ico {
+  height: 1.5em;
+  width: 1.5em;
+}
+.ico-xl .ico {
+  height: 2em;
+  width: 2em;
+}
+.ico-xxl .ico {
+  height: 3em;
+  width: 3em;
+}

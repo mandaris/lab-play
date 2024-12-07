@@ -1,7 +1,9 @@
 {{- if .Title }}
 <article class="object-effect | flow | h-entry | hentry | post"
   aria-label="{{ .Title }}"
-  itemscope itemtype="https://schema.org/BlogPosting">
+  itemscope itemtype="https://schema.org/BlogPosting"
+  id="{{ .Permalink | relURL | anchorize }}"
+  style="view-transition-name: {{ .Permalink | relURL | anchorize }}">
 <header class="post-header">
 <a href="{{ .Permalink }}" class="u-url">
   <h1 itemprop="headline" class="p-name">{{ .Title }}</h1>
