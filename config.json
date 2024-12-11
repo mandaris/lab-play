@@ -12,6 +12,10 @@
     "highlight": {
       "noClasses": false
     },
+    "tableOfContents": {
+      "endLevel": 5,
+      "startLevel": 3
+    },
     "goldmark": {
       "parser": {
         "wrapStandAloneImageWithinParagraph": false,
