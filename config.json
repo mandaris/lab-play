@@ -1,10 +1,20 @@
 {
   "params": {
-      "themeVersion": "0.0.1"
+      "themeVersion": "0.0.1",
+      "author": {
+        "name": "Mandaris",
+        "email": "info@MandarisMoore.com",
+        "description": "I consider myself a digital gopher. I like the web."
+      },
+      "itunes_description": "This will be replaced with the micro.blog description."
   },
   "markup": {
     "highlight": {
       "noClasses": false
+    },
+    "tableOfContents": {
+      "endLevel": 5,
+      "startLevel": 3
     },
     "goldmark": {
       "parser": {

@@ -1,10 +1,13 @@
 {{ "<!-- site-navigation.html -->" | safeHTML }}
 <header class="site-header | object-effect">
-<nav id="Site" aria-label="Website">
-<menu title="Website Navigation">
-  <li>
-    <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }} Home Page"><img src="/svg/UserIcons_Mandaris_02.svg" class="logo">Home</a>
-  </li>
+  <div class="site-identity" style="float: left;">
+    <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }} Home Page">
+      <img src="/svg/UserIcons_Mandaris_02.svg" class="logo">
+      <h1>{{ .Site.Title }}</h1>
+    </a>
+  </div>
+  <nav id="Site" aria-label="Website" style="float: right;">
+  <menu title="Website Navigation">
   {{- range .Site.Menus.main }} 
   <li>
     <a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
