@@ -1,8 +1,7 @@
 {{  define "main" }}
 {{- range ( .Paginate (where .Site.RegularPages "Type" "post")).Pages }}
-{{ partial "article.html" . }}
-    
-{{ end }}
+{{ partial "article.html" . }}   
+{{- end }}
 
 {{ partial "site-pagination.html" . }}
 {{ end }}
