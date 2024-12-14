@@ -1,2 +1,2 @@
 # Play-Lab
-Theme based off of ideas from Labarum
+Theme based off of ideas from Labarum.
