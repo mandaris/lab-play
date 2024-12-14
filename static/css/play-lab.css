@@ -508,10 +508,10 @@ ul > li > input[type="checkbox"]:checked::before {
 
 .style-box,
 .object-effect {
-  border: 1px solid black;
+  border: 1px solid currentColor;
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
   background-color: var(--background-alt);
-  padding: .5em;
+  padding: .3em;
   border-radius: var(--border-radius, 0.5rem);
 }
 
