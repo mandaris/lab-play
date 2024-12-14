@@ -620,8 +620,9 @@ table:not([class]) {
 }
 
 .optional:has(a, p, img) {
-	display: block;
-	grid-area: informational;
+  display: block;
+  text-align: center;
+  grid-area: informational;
 }
 
 pre.mermaid {
