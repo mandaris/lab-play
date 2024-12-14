@@ -96,6 +96,16 @@ body {
 /* Composition */
 .site-header {
   grid-area: topping;
+  display: flex;
+  justify-content: space-between;
+
+  & menu {
+    padding: inherit;
+  }
+
+	& menu li {
+		display: inline;
+	}
 }
 
 .contentSection {
@@ -184,7 +194,6 @@ body {
   display: grid;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  grid-template-columns: 33% 33% 33%;
 }
 
 textarea:not([rows]) {
@@ -636,20 +645,13 @@ pre.mermaid {
 
 .logo {
   display: inline;
-  height: 2em;
+  height: 1.5em;
   /* top: 3px; */
-  float: inline-start;
+  /* float: inline-start; */
+  vertical-align: middle;
+  margin: auto
 }
 
-
-.site-header {
-  & menu {
-    padding: inherit;
-  }
-	& menu li {
-		display: inline;
-	}
-}
 
 .TableOfContents {
   display: hidden;
