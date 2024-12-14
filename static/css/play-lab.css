@@ -515,6 +515,9 @@ ul > li > input[type="checkbox"]:checked::before {
   border-radius: var(--border-radius, 0.5rem);
 }
 
+.conversation-on-mb,
+.reply-on-mastodon,
+.reply-by-email,
 .lozenge {
   background-color: var(--accent-alt);
   color: var(--text);
