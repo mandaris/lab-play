@@ -1,5 +1,5 @@
 {{ define "main" }}
-	<div class="photos-grid-container | object-effect | radius">
+	<div class="photos-grid-container | object-effect">
 
 	{{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
 	{{- $len := (len $list) -}}
