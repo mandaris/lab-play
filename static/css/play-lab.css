@@ -194,6 +194,7 @@ body {
   display: grid;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 textarea:not([rows]) {
