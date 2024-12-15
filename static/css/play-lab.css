@@ -484,7 +484,6 @@ del[cite]:after {
   color: var(--text-alt);
 }
 
-
 /* task list and its checkboxes */
 ul > li:has(> input[type="checkbox"]) {
   list-style: none;
