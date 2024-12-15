@@ -6,22 +6,38 @@
   Formated by Jessica Smith (jayeless.net)
   */
 
-  --nordDark1: #2e3440;  /* Polar Night - darkest */
-  --nordDark2: #3b4252;  /* Polar Night - second-darkest */
-  --nordDark3: #434c5e;  /* Polar Night - third-darkest */
-  --nordDark4: #4c566a;  /* Polar Night - fourth-darkest */
-  --nordLight1: #d8dee9;  /* Snow Storm - third-lightest */
-  --nordLight2: #e5e9f0;  /* Snow Storm - second-lightest */
-  --nordLight3: #eceff4;  /* Snow Storm - lightest */
-  --nordTeal: #8fbcbb;  /* Frost - teal accent colour */
-  --nordAqua: #88c0d0;  /* Frost - aqua accent colour */
-  --nordLightBlue: #81a1c1;  /* Frost - lighter blue accent colour */
-  --nordBlue: #5e81ac;  /* Frost - darker blue accent colour */
-  --nordRed: #bf616a;  /* Aurora - red accent colour */
-  --nordOrange: #d08770;  /* Aurora - orange accent colour */
-  --nordYellow: #ebcb8b;  /* Aurora - yellow accent colour */
-  --nordGreen: #a3be8c;  /* Aurora - green accent colour */
-  --nordPurple: #b48ead;  /* Aurora - purple accent colour */
+  --nordDark1: #2e3440;
+  /* Polar Night - darkest */
+  --nordDark2: #3b4252;
+  /* Polar Night - second-darkest */
+  --nordDark3: #434c5e;
+  /* Polar Night - third-darkest */
+  --nordDark4: #4c566a;
+  /* Polar Night - fourth-darkest */
+  --nordLight1: #d8dee9;
+  /* Snow Storm - third-lightest */
+  --nordLight2: #e5e9f0;
+  /* Snow Storm - second-lightest */
+  --nordLight3: #eceff4;
+  /* Snow Storm - lightest */
+  --nordTeal: #8fbcbb;
+  /* Frost - teal accent colour */
+  --nordAqua: #88c0d0;
+  /* Frost - aqua accent colour */
+  --nordLightBlue: #81a1c1;
+  /* Frost - lighter blue accent colour */
+  --nordBlue: #5e81ac;
+  /* Frost - darker blue accent colour */
+  --nordRed: #bf616a;
+  /* Aurora - red accent colour */
+  --nordOrange: #d08770;
+  /* Aurora - orange accent colour */
+  --nordYellow: #ebcb8b;
+  /* Aurora - yellow accent colour */
+  --nordGreen: #a3be8c;
+  /* Aurora - green accent colour */
+  --nordPurple: #b48ead;
+  /* Aurora - purple accent colour */
 
 
   --background: var(--nordDark1);
@@ -55,11 +71,12 @@
   :root {
     --background: var(--nordDark3);
     --background-alt: var(--nordDark1);
-	  --background-mid: var(--nordDark2);
+    --background-mid: var(--nordDark2);
     --text: var(--nordLight3);
     --text-alt: var(--nordLight2);
   }
 }
+
 *,
 *::before,
 *::after {
@@ -103,9 +120,9 @@ body {
     padding: inherit;
   }
 
-	& menu li {
-		display: inline;
-	}
+  & menu li {
+    display: inline;
+  }
 }
 
 .contentSection {
@@ -142,18 +159,18 @@ body {
 .author-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas: 
-  "author-image"
-  "author-bio";
+  grid-template-areas:
+    "author-image"
+    "author-bio";
 }
 
 @container (min-width: 40ch) {
   .author-wrapper {
     grid-template-columns: 1fr 2fr;
-    grid-template-areas: 
-    "author-image author-bio";
+    grid-template-areas:
+      "author-image author-bio";
   }
-} 
+}
 
 .site-footer {
   grid-area: bottoms;
@@ -215,7 +232,7 @@ body {
   grid-template-areas:
     "leftside rightside"
     "article-author article-author"
-    "debug debug"; 
+    "debug debug";
 }
 
 .photos-grid-item {
@@ -262,7 +279,7 @@ canvas {
   max-width: 85% !important;
 }
 
-p > img {
+p>img {
   display: inline-block;
   margin-left: .5rem;
   margin-right: .5rem;
@@ -283,7 +300,7 @@ audio {
 }
 
 audio::-webkit-media-controls-panel {
-	color: var(--accent);
+  color: var(--accent);
   background-color: var(--background);
 }
 
@@ -315,7 +332,10 @@ h1 {
   font-size: 2em;
 }
 
-pre, code, kbd, samp {
+pre,
+code,
+kbd,
+samp {
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
@@ -392,7 +412,10 @@ a.footnote-ref::after {
   content: ']';
 }
 
-p > code, li > code, kbd, samp {
+p>code,
+li>code,
+kbd,
+samp {
   background-color: var(--background-mid);
   padding: 3px;
   border-radius: 5px;
@@ -410,8 +433,9 @@ mark {
 Found at the following location.
 https://www.tpgi.com/short-note-on-making-your-mark-more-accessible/
 */
-mark::before, mark::after {
-  content:" [highlight start] ";
+mark::before,
+mark::after {
+  content: " [highlight start] ";
   clip-path: inset(100%);
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -422,7 +446,7 @@ mark::before, mark::after {
 }
 
 mark::after {
-  content:" [highlight end] ";
+  content: " [highlight end] ";
 }
 
 abbr {
@@ -485,23 +509,25 @@ del[cite]:after {
 }
 
 /* task list and its checkboxes */
-ul > li:has(> input[type="checkbox"]) {
+ul>li:has(> input[type="checkbox"]) {
   list-style: none;
   margin-inline-start: -1rem;
 }
 
-ul > li:has(> input[type="checkbox"])::before {
-  content: "\200B"; /* accessibilty for Safari https://developer.mozilla.org/en-US/docs/Web/CSS/list-style */
+ul>li:has(> input[type="checkbox"])::before {
+  content: "\200B";
+  /* accessibilty for Safari https://developer.mozilla.org/en-US/docs/Web/CSS/list-style */
 }
 
 /* Taken from the Hugo Relearn Theme */
 /* https://themes.gohugo.io/themes/hugo-theme-relearn/ */
 /* https://moderncss.dev/pure-css-custom-checkbox-style/ */
-ul > li > input[type="checkbox"] {
+ul>li>input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
   /* For iOS < 15 */
-  background-color: var(--INTERNAL-MAIN-BG-color); /* box background */
+  background-color: var(--INTERNAL-MAIN-BG-color);
+  /* box background */
   border: 0.15rem solid currentColor;
   border-radius: 0.15rem;
   color: var(--INTERNAL-MAIN-TEXT-color);
@@ -514,7 +540,7 @@ ul > li > input[type="checkbox"] {
   width: 1.15rem;
 }
 
-ul > li > input[type="checkbox"]::before {
+ul>li>input[type="checkbox"]::before {
   box-shadow: inset 1rem 1rem var(--accent);
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   content: "";
@@ -527,7 +553,7 @@ ul > li > input[type="checkbox"]::before {
   background-color: CanvasText;
 }
 
-ul > li > input[type="checkbox"]:checked::before {
+ul>li>input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 
@@ -598,7 +624,7 @@ ul > li > input[type="checkbox"]:checked::before {
   z-index: 99;
 }
 
-#plugin-container > a {
+#plugin-container>a {
   display: inline-block;
 }
 
@@ -615,7 +641,8 @@ ul > li > input[type="checkbox"]:checked::before {
     overflow-x: scroll;
   }
 
-  .lnt, .hl {
+  .lnt,
+  .hl {
     display: flex;
   }
 
@@ -636,14 +663,14 @@ table:not([class]) {
   max-width: 80%;
   white-space: nowrap;
   overflow-x: auto;
-  
+
   thead th,
   th {
     font-weight: bold;
     color: var(--text-alt);
     border-bottom: 1px solid var(--accent-alt);
   }
-  
+
   tr:nth-child(even of :not([hidden]))>td {
     background: var(--background-mid);
   }
@@ -680,6 +707,7 @@ pre.mermaid {
     grid-column: 1;
     text-align: left;
   }
+
   .nav_next {
     grid-column: 2;
     text-align: right;
@@ -706,7 +734,7 @@ pre.mermaid {
 }
 
 .alert {
-  
+
   /* p:last-child {
       margin-bottom: 0;
   }
@@ -716,37 +744,37 @@ pre.mermaid {
   } */
 
   .alert-title {
-      position: absolute;
-      left: 16px;
-      margin-top: 17px;
-      font-size: 1.2em;
+    position: absolute;
+    left: 16px;
+    margin-top: 17px;
+    font-size: 1.2em;
 
-      .alert-icon {
-          width: 1.2em;
-          height: 1.2em;
-      }
+    .alert-icon {
+      width: 1.2em;
+      height: 1.2em;
+    }
   }
 
   &.alert-warning {
-      background: hsla(30, 80%, 70%, 0.15);
-      border-left: 5px solid hsl(30, 80%, 70%);
+    background: hsla(30, 80%, 70%, 0.15);
+    border-left: 5px solid hsl(30, 80%, 70%);
   }
 
   &.alert-important {
-      background: hsla(261, 61%, 64%, 0.15);
-      border-left: 5px solid hsl(261, 61%, 64%);
+    background: hsla(261, 61%, 64%, 0.15);
+    border-left: 5px solid hsl(261, 61%, 64%);
   }
 
   &.alert-note {
-      background: hsla(200, 65%, 65%, 0.15);
-      border-left: 5px solid hsl(200, 65%, 65%);
+    background: hsla(200, 65%, 65%, 0.15);
+    border-left: 5px solid hsl(200, 65%, 65%);
   }
 
   &.alert-tip {
-      background: hsla(140, 65%, 65%, 0.15);
-      border-left: 5px solid hsl(140, 65%, 65%);
+    background: hsla(140, 65%, 65%, 0.15);
+    border-left: 5px solid hsl(140, 65%, 65%);
   }
-  
+
   &.alert-caution {
     background: hsla(0, 65%, 65%, 0.15);
     border-left: 5px solid hsl(0, 65%, 65%);
