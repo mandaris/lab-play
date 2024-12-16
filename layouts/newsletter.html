@@ -1,0 +1,95 @@
+<style>
+  .microblog_email {
+    background-color: #eceff4;
+    color: #2e3440;
+
+    font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, Verdana, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+    line-height: 1.6;
+    font-size: 1.3rem;
+
+    text-wrap: pretty;
+  }
+
+  a {
+    color: #5e81ac;
+    text-underline-offset: 0.15em;
+    text-decoration-line: underline;
+    text-decoration-color: #8fbcbb;
+    text-decoration-thickness: var(--text-decoration-thickness, .1em);
+  }
+	
+	.microblog_divider {
+		color: #8fbcbb;
+	}
+
+  hr {
+    color: var(--accent);
+    overflow: auto;
+    height: var(--text-decoration-thickness, .1em);
+  }
+  
+	{{ .CustomCSS }}
+</style>
+
+<div class="microblog_email">
+
+	<p class="microblog_header">
+	<img src="{{ .Site.Author.avatar }}" width="30" height="30" alt="Profile icon" style="border-radius: 15px; vertical-align: middle;">
+	<b>{{ .Site.Title }}</b>
+	— <a href="{{ .Footer.UnsubscribeURL }}">Unsubscribe</a>
+
+	{{ if gt (len .Intro) 0 }}
+		<p>
+		<hr>
+
+		<p>
+		{{ .Intro }}
+	{{ end }}
+
+	<p>
+	<hr>
+
+	{{ range .Pages }}
+
+		{{ if .Title }}
+			<b>{{ .Title }}</b>
+		{{ end }}
+
+		<p>
+		{{ .Content }}
+
+		<p>
+		{{ if gt (len .Params.audio) 0 }}
+			<a href="{ .Permalink }">Audio</a>
+		{{ end }}
+
+		{{ if gt (len .Params.video) 0 }}
+			<a href="{ .Permalink }">Video</a>
+		{{ end }}
+
+		<a href="{{ .Permalink }}" class="microblog_permalink">{{ .Date.Format "2006-01-02" }}</a>
+
+		<hr>
+
+	{{ end }}
+
+	<div class="microblog_footer">
+
+		<p>
+		<a href="{{ .Footer.UnsubscribeURL }}">Unsubscribe</a> <span class="microblog_divider">|</span> 
+		
+		{{ if eq (len .Pages) 1 }}
+			{{ with index .Pages 0 }}
+				<a href="{{ .Permalink }}">View in browser</a> <span class="microblog_divider">|</span> 
+			{{ end }}
+		{{ end }}		
+		
+		<a href="{{ .Site.BaseURL }}">{{ .Site.Hostname }}</a>
+		
+		{{ if gt (len .Footer.MailingAddress) 0 }}
+			<span class="microblog_divider">|</span> {{ .Footer.MailingAddress }}
+		{{ end }}
+
+	</div>
+
+</div>
