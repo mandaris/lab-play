@@ -7,7 +7,7 @@
   </a>
   
   <nav id="Site" aria-label="Website" style="float: right;">
-  <menu title="Website Navigation">
+  <menu>
   {{- range .Site.Menus.main }} 
   <li>
     <a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
