@@ -4,9 +4,13 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 ## Version History
 
 1.0.0
-: Initial release
+- Initial release
 
 1.0.1
-: Correct background color for `<audio>` element
-: Change anchor styling to be more simplistic
-: Remove `title` from `<menu>` element
+- Correct background color for `<audio>` element
+- Change anchor styling to be more simplistic
+- Remove `title` from `<menu>` element
+
+1.0.2
+- Added `box-decoration-break` to `pre`, `code`, and `kbd`
+- Updated newsletter theme
