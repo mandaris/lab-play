@@ -4,12 +4,12 @@
 <div class="author-image">
   <img class="u-photo" loading="lazy" itemprop="image"
     src="{{ .Site.Author.avatar }}"
-    alt="Profile image of {{ .Site.Author.name }}"/>  
+    alt="Profile image of {{ .Site.Params.Author.name }}"/>  
   <a itemprop="url" href="{{ .Site.BaseURL }}">
   <h1 itemprop="name" class="p-name | text-center">{{ .Site.Author.name }}</h1>
   </a>
 </div>
   <div class="author-bio | bio | p-note" itemprop="description">
-  {{ .Site.Params.itunes_description | safeHTML }}
+  {{ .Site.Params.Author.description | safeHTML }}
   </div>
 </address>

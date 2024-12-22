@@ -2,15 +2,15 @@
   class="object-effect | author | h-card | p-author">
   <div class="author-wrapper">
     <img class="u-photo | author-image" loading="lazy" itemprop="image" src="{{ .Site.Author.avatar }}"
-      alt="Profile of {{ .Site.Author.name }}" />
+      alt="Profile of {{ .Site.Params.Author.name }}" />
     <div class="author-bio">
       <a itemprop="url" class="u-url" rel="me" href="{{ .Site.BaseURL }}">
         <h2 itemprop="name" class="p-name">
-          {{ .Site.Author.name }}
+          {{ .Site.Params.Author.name }}
         </h2>
       </a>
       <div class="bio | p-note" itemprop="description">
-        {{ .Site.Params.itunes_description | safeHTML }}
+        {{ .Site.Params.Author.description | safeHTML }}
       </div>
     </div>
   </div>
