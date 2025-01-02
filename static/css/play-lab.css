@@ -389,6 +389,10 @@ a.footnote-backref {
   text-decoration: none;
 }
 
+a.footnote-ref {
+  font-size: small;
+}
+
 a h1 {
   color: var(--text-alt);
   text-decoration-color: var(--accent-opposite);
@@ -402,14 +406,6 @@ a:focus h1 {
 
 :target {
   scroll-margin-block: 3ex;
-}
-
-a.footnote-ref::before {
-  content: '[';
-}
-
-a.footnote-ref::after {
-  content: ']';
 }
 
 p>code,
@@ -563,6 +559,7 @@ ul>li>input[type="checkbox"]:checked::before {
   margin: 0 auto;
   border-radius: var(--border-radius);
 }
+
 hr {
   width: 80%;
   color: var(--accent);
@@ -595,6 +592,7 @@ figcaption {
 .conversation-on-mb,
 .reply-on-mastodon,
 .reply-by-email,
+a.footnote-ref,
 .lozenge {
   background-color: var(--accent-alt);
   color: var(--text);
