@@ -318,6 +318,10 @@ blockquote {
   margin-inline-start: .5rem;
   margin-inline-end: .5rem;
   overflow-y: auto;
+
+  & footer {
+    text-align: end;
+  }
 }
 
 header,
