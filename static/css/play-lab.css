@@ -597,7 +597,7 @@ hr {
   text-align: center;
   display: inline-block;
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
-  padding: 0px 10px;
+  padding: 0px 5px;
   border-radius: 1em;
 }
 
