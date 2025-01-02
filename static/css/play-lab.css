@@ -79,6 +79,9 @@
   }
 }
 
+@media (prefers-reduced-motion) {
+  interpolate-size: numeric-only;
+}
 *,
 *::before,
 *::after {
