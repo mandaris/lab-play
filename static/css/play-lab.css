@@ -587,6 +587,10 @@ hr {
   border-radius: var(--border-radius, 0.5rem);
 }
 
+figcaption {
+  text-align: center;
+}
+
 .conversation-on-mb,
 .reply-on-mastodon,
 .reply-by-email,
