@@ -27,6 +27,21 @@
 		height: var(--text-decoration-thickness, .1em);
 	}
 
+	img,
+picture,
+video,
+iframe,
+.lite-youtube,
+canvas {
+  display: block;
+  max-width: 85%;
+  height: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  border-radius: var(--border-radius, 0.5rem);
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem #5e81ac);
+}
+
 	{{ .CustomCSS }}
 </style>
 
