@@ -58,7 +58,7 @@
   accent-color: var(--accent);
   caret-color: aqua;
 
-  /* --flow-space: 0.5rem; */
+  --flow-space: 0.5rem;
 
   /* New method to automate sizes   */
   interpolate-size: allow-keywords;
