@@ -601,6 +601,10 @@ hr {
   border-radius: 1em;
 }
 
+.conversation-on-mb:hover,
+.reply-on-mastodon:hover,
+.reply-by-email:hover,
+a.footnote-ref:hover,
 .lozenge:hover,
 .lozenge:focus-visible {
   color: var(--nordLight3);
