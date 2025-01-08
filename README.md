@@ -17,3 +17,9 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.0.3
 - Use `.Params.Author` instead of `.Site.Author` this is because it was depreciated
+
+1.1.0
+- Change the minimum version of Hugo needed for this theme
+- Change `a.footnote-ref` to match the style of `lozenge` class
+- Remove all default padding (made some changes to accomidate)
+- Add styling for `figure` and `figcaption`

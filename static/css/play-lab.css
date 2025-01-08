@@ -557,6 +557,7 @@ ul>li>input[type="checkbox"]:checked::before {
 [popover] {
   top: 2rem;
   margin: 0 auto;
+  padding: .5rem;
   border-radius: var(--border-radius);
 }
 
@@ -758,7 +759,7 @@ pre.mermaid {
 }
 
 .alert {
-
+  padding: 0 .5rem;
   /* p:last-child {
       margin-bottom: 0;
   }

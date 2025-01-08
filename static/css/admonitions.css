@@ -1,0 +1,64 @@
+/* Admonitions specific elements */
+:root {
+  --admonition-color: var(--accent, #5e81ac);
+}
+
+.admonition {
+  margin: 1rem 0;
+  border-radius: var(--border-radius, 10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  
+  border: 1px solid var(--admonition-color);
+  border-left: 5px solid var(--admonition-color);
+}
+
+.admonition-header {
+  padding: 0.5rem;
+  display: flex;
+  align-items: stretch;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 var(--border-radius, 10px) 0 0;
+  color: var(--admonition-color);
+  background: color-mix(in srgb, currentColor, transparent 75%);
+  
+  svg {
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 0.5rem;
+  }
+
+  h3 {
+    color: var(--text);
+    font-size: large;
+  }
+}
+
+.admonition-content {
+  padding: 0.5rem;
+}
+
+.admonition.note {
+  --admonition-color: #096ae1;
+}
+
+.admonition.tip {
+  --admonition-color: #198032;
+}
+
+.admonition.important {
+  --admonition-color: #8352e0;
+}
+
+.admonition.warning {
+  --admonition-color: #9b6600;
+}
+
+.admonition.caution {
+  --admonition-color: #d12329;
+}
+
+.admonition.test {
+  --admonition-color: darkcyan;
+}
