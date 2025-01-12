@@ -3,10 +3,10 @@
   style="display: none;">
 <div class="author-image">
   <img class="u-photo" loading="lazy" itemprop="image"
-    src="{{ .Site.Author.avatar }}"
+    src="{{ .Site.Params.Author.avatar }}"
     alt="Profile image of {{ .Site.Params.Author.name }}"/>  
   <a itemprop="url" href="{{ .Site.BaseURL }}">
-  <h1 itemprop="name" class="p-name | text-center">{{ .Site.Author.name }}</h1>
+  <h1 itemprop="name" class="p-name | text-center">{{ .Site.Params.Author.name }}</h1>
   </a>
 </div>
   <div class="author-bio | bio | p-note" itemprop="description">
