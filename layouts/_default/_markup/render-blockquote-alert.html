@@ -1,15 +1,7 @@
-{{ $emojis := dict
-  "caution" ":exclamation:"
-  "important" ":information_source:"
-  "note" ":information_source:"
-  "tip" ":bulb:"
-  "warning" ":information_source:"
-}}
-
 {{- $icons := dict
   "caution"     "alert-triangle.svg"
   "idea"        "bulb.svg"
-  "important"   "exclamation-circle.svg"
+  "important"   "info-circle.svg"
   "info"        "info-circle.svg"
   "note"        "note.svg"
   "tip"         "bulb.svg"
@@ -17,27 +9,29 @@
 }}
 
 
-{{ if eq .Type "alert" }}
+{{- if eq .Type "alert" }}
 {{- /* Render admonition. */}}
-{{- $type := cond (index $icons .AlertType) .AlertType "note" }}
-{{- $partial := printf "svg/%s" (index $icons $type) }}
+{{- $type := cond (index $icons .AlertType) .AlertType "info" }}
+{{- $iconFile := printf "admonitions/icons/%s" (index $icons $type) -}}
 
 <aside class="admonition {{ .AlertType }}">
   <header class="admonition-header">
-    {{ transform.Emojify (index $emojis .AlertType) }}
-    {{ partialCached $partial . }}
-    {{ with .AlertTitle }}
-      <h3>{{ . }}</h3>
-    {{ else }}
-      <h3>{{ or (i18n .AlertType) (title .AlertType) }}</h3>
-    {{ end }}
+    {{ if templates.Exists (printf "partials/%s" $iconFile) }}
+    {{- partialCached $iconFile . }}
+    {{- end }}
+    {{- with .AlertTitle }}
+    <h3>{{ . }}</h3>
+    {{- else }}
+    <h3>{{ or (i18n .AlertType) (title .AlertType) }}</h3>
+    {{- end }}
   </header>
   {{- with .Text }}
-      <div class="admonition-content">
-        {{ . }}
-      </div>
-    {{- end }}
+  <div class="admonition-content">
+    {{ . }}
+  </div>
+  {{- end }}
 </aside>
+
 {{ else }}
 <blockquote>
   {{ .Text }}
