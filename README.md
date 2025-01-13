@@ -23,3 +23,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Change `a.footnote-ref` to match the style of `lozenge` class
 - Remove all default padding (made some changes to accomidate)
 - Add styling for `figure` and `figcaption`
+- Change `.Site.Author` to `.Site.Params.Author`
+- Add hover affect for includes
+- Reduce motion if requested
+- Adjustments for newsletter
+- Add render hook for alerts
