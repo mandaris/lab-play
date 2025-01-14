@@ -6,8 +6,12 @@ features = ["rss", "categories", "mermaid", "table of contents"]
 
 [module]
   [module.hugoVersion]
-    min = "0.140"
+    min = "0.117"
 
 [author]
   name = "Mandaris Moore"
   homepage = "https://MandarisMoore.com"
+
+[taxonomies]
+	author = "authors"
+	category = "categories"
