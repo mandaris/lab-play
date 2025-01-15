@@ -28,3 +28,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Reduce motion if requested
 - Adjustments for newsletter
 - Add render hook for alerts
+
+1.1.1
+- Add page for author taxonomy
+- Change padding to set value instead of `em`

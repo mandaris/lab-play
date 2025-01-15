@@ -582,7 +582,7 @@ figure,
   border: 1px solid currentColor;
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
   background-color: var(--background-alt);
-  padding: .3em;
+  padding: 12px;
   border-radius: var(--border-radius, 0.5rem);
 }
 
