@@ -1,4 +1,9 @@
 {
+  "pagination": {
+    "disableAliases": false,
+    "pagerSize": 7,
+    "path": "post"
+ },
   "params": {
       "themeVersion": "1.1.1",
       "author": {
