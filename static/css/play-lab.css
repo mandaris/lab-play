@@ -119,8 +119,12 @@ body {
 /* Composition */
 .site-header {
   grid-area: topping;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
+
+  & nav {
+    text-align: end;
+  }
 
   & menu {
     padding: inherit;
@@ -321,6 +325,7 @@ blockquote {
 
   & footer {
     text-align: end;
+    margin-inline-end: .5rem;
   }
 }
 
@@ -505,6 +510,10 @@ del[cite]:after {
   color: var(--text-alt);
 }
 
+ol, ul {
+  margin-inline-start: 1.5em;
+}
+
 /* task list and its checkboxes */
 ul>li:has(> input[type="checkbox"]) {
   list-style: none;
@@ -653,6 +662,26 @@ a.footnote-ref:hover,
   display: inline-block;
 }
 
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow-x: auto;
+
+  thead th,
+  th {
+    font-weight: bold;
+    color: var(--text-alt);
+    border-bottom: 1px solid var(--accent-alt);
+  }
+
+  tr:nth-child(even of :not([hidden]))>td {
+    background: var(--background-mid);
+  }
+}
+
 .highlight {
   max-width: 100%;
   border-radius: 5px;
@@ -679,28 +708,6 @@ a.footnote-ref:hover,
     margin-inline-start: 0px;
   }
 }
-
-table:not([class]) {
-  margin: auto;
-  border-collapse: collapse;
-  display: block;
-  width: 100%;
-  max-width: 80%;
-  white-space: nowrap;
-  overflow-x: auto;
-
-  thead th,
-  th {
-    font-weight: bold;
-    color: var(--text-alt);
-    border-bottom: 1px solid var(--accent-alt);
-  }
-
-  tr:nth-child(even of :not([hidden]))>td {
-    background: var(--background-mid);
-  }
-}
-
 
 .optional {
   display: none;

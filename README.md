@@ -32,3 +32,11 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.1.1
 - Add page for author taxonomy
 - Change padding to set value instead of `em`
+
+1.1.2
+- Add `aria-hidden` to staticly linked svgs
+- Reference `notes.svg` instead of `note.svg`
+- Modify `site-header` to have the menu under the title
+- Adjust `li` and `ol` to have `inline-margin-start`
+- Change order of table css to better
+- Add margin for `blockquote > footer`
