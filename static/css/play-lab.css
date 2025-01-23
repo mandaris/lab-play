@@ -319,6 +319,7 @@ audio::-webkit-media-controls-play-button {
 blockquote {
   border-left: 5px solid var(--accent);
   padding-left: .5rem;
+  background-color: var(--background-alt);
   margin-inline-start: .5rem;
   margin-inline-end: .5rem;
   overflow-y: auto;
@@ -467,6 +468,7 @@ hr {
 
 dt {
   font-weight: bold;
+  font-style: oblique;
   color: var(--text-alt);
 }
 
@@ -610,7 +612,7 @@ a.footnote-ref,
   text-align: center;
   display: inline-block;
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
-  padding: 0px 5px;
+  padding: 0px 12px;
   border-radius: 1em;
 }
 

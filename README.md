@@ -40,3 +40,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Adjust `li` and `ol` to have `inline-margin-start`
 - Change order of table css to better
 - Add margin for `blockquote > footer`
+
+1.1.3
+- Add more padding to lozenge
+- Add more color to `blockquote` and add it to newsletter
+- Adjust the definition terms `<dt>` to be `oblique`
