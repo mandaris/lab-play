@@ -45,3 +45,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Add more padding to lozenge
 - Add more color to `blockquote` and add it to newsletter
 - Adjust the definition terms `<dt>` to be `oblique`
+
+1.1.4
+- Fix conversations not showing up on main site

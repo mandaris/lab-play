@@ -139,6 +139,14 @@ body {
   grid-area: contentSection;
 }
 
+.plugin-container {
+  grid-area: contentSection;
+}
+
+..microblog_conversation {
+  grid-area: contentSection;
+}
+
 .information-area {
   grid-area: informational;
 }
