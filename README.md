@@ -47,4 +47,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Adjust the definition terms `<dt>` to be `oblique`
 
 1.1.4
-- Fix conversations not showing up on main site
+- Fix conversations not showing up on main site by removing duplicate definition of `single.html`
+
+1.1.5
+- Add a couple more svg images and colors for admonitions
+- Add the custom footer partial to the footer

@@ -52,12 +52,21 @@
   --admonition-color: #8352e0;
 }
 
+.admonition.danger,
 .admonition.warning {
-  --admonition-color: #9b6600;
+  --admonition-color: orangered;
 }
 
 .admonition.caution {
   --admonition-color: #d12329;
+}
+
+.admonition.error {
+  --admonition-color: crimson;
+}
+
+.admonition.goal {
+  --admonition-color: forestgreen;
 }
 
 .admonition.test {

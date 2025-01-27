@@ -4,8 +4,12 @@
   
   {{- with  .Site.Params.description -}}
   <p class="text-center">{{ . | safeHTML }}</p>
-  {{ end -}}
-    
+  {{ end }}
+  
+  {{- if templates.Exists "partials/custom_footer.html" -}}
+  {{ partial "custom_footer.html" . }}
+  {{ end }}
+
   <p class="text-center">
   {{- with .Site.Copyright }}
   {{ . | safeHTML }}
