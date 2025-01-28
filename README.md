@@ -52,3 +52,9 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.1.5
 - Add a couple more svg images and colors for admonitions
 - Add the custom footer partial to the footer
+
+1.1.6
+- Change the pagination on index.html to only have pages with titles
+- Center text in footer
+- Adjust colors in newsletter.html
+- Add more static SVGs

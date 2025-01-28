@@ -1,5 +1,8 @@
 {{  define "main" }}
-{{- range ( .Paginate (where .Site.RegularPages "Type" "post")).Pages }}
+{{- $pages := where site.RegularPages "Type" "post" }}
+{{- $pages = where $pages "Params.title" "ne" nil }}
+{{- $paginator := .Paginate $pages 10 }}
+{{- range $paginator.Pages }}
 {{ partial "article.html" . }}   
 {{- end }}
 
