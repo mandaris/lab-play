@@ -58,3 +58,9 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Center text in footer
 - Adjust colors in newsletter.html
 - Add more static SVGs
+
+1.1.7
+- Add styling to comments
+- Make micro.blog icon use currentColor
+- Add a `--background-mid` to `<blockquote>`
+- Add more admonition color options

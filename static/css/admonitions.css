@@ -40,6 +40,7 @@
   padding: 0.5rem;
 }
 
+.admonition.notify,
 .admonition.note {
   --admonition-color: #096ae1;
 }
@@ -49,7 +50,11 @@
 }
 
 .admonition.important {
-  --admonition-color: #8352e0;
+  --admonition-color: rebeccapurple;
+}
+
+.admonition.idea {
+  --admonition-color: seagreen;
 }
 
 .admonition.danger,
@@ -65,10 +70,36 @@
   --admonition-color: crimson;
 }
 
+.admonition.success,
 .admonition.goal {
   --admonition-color: forestgreen;
 }
 
 .admonition.test {
   --admonition-color: darkcyan;
+}
+
+.admonition.task {
+  --admonition-color: steelblue;
+}
+
+.admonition.memo {
+  --admonition-color: goldenrod;
+}
+
+.admonition.example,
+.admonition.experiment {
+  --admonition-color: teal;
+}
+
+.admonition.question {
+  --admonition-color: midnightblue;
+}
+
+.admonition.info {
+  --admonition-color: tomato;
+}
+
+.admonition.code {
+  --admonition-color: purple;
 }
