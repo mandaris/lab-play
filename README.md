@@ -64,3 +64,14 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Make micro.blog icon use currentColor
 - Add a `--background-mid` to `<blockquote>`
 - Add more admonition color options
+- Remove filter that makes index only show posts with titles
+
+1.1.8
+- Change the tags on hidden author information
+- Add spacing around article meta properties
+- Remove `role` from paginator
+- Add a `-` in the title for MicroPosts
+- Update meta tags to use the logic from the official [schema embed](https://raw.githubusercontent.com/gohugoio/hugo/refs/heads/master/tpl/tplimpl/embedded/templates/schema.html)
+- Remove the `text-wrap: balance` from the `h1` element
+- Move `text-wrap: pretty` from `html` to `.post-body`
+- Add `line-height: normal` to `.lozenge`

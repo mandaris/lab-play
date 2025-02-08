@@ -82,6 +82,7 @@
 @media (prefers-reduced-motion) {
   interpolate-size: numeric-only;
 }
+
 *,
 *::before,
 *::after {
@@ -103,7 +104,6 @@ html {
 
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
-  text-wrap: pretty;
 }
 
 body {
@@ -143,7 +143,7 @@ body {
   grid-area: contentSection;
 }
 
-..microblog_conversation {
+.microblog_conversation {
   grid-area: contentSection;
 }
 
@@ -197,6 +197,7 @@ body {
 
 .post-body {
   container-type: inline-size;
+  text-wrap: pretty;
   height: fit-content;
 }
 
@@ -348,12 +349,16 @@ h6 {
   transition: all .5s;
   transition-timing-function: cubic-bezier(.7, 0, .3, 1);
   line-height: normal;
-  text-wrap: balance;
 }
 
 h1 {
   font-size: 2em;
 }
+
+h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
 
 pre,
 code,
@@ -409,7 +414,6 @@ a.footnote-ref {
 
 a h1 {
   color: var(--text-alt);
-  text-decoration-color: var(--accent-opposite);
 }
 
 a:hover h1,
@@ -622,6 +626,7 @@ a.footnote-ref,
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
   padding: 0px 12px;
   border-radius: 1em;
+  line-height: normal;
 }
 
 .conversation-on-mb:hover,
