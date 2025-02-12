@@ -48,22 +48,22 @@
     {{ if not .Params.showDebugInfo }}style="display: none;"{{ end }}
     class="debug">
         <summary>Debug Information</summary>
-        <h1>Permalink</h1>
+        <h3>Permalink</h3>
         <code>
         {{ printf "%#v \n" .Permalink }}
         </code>
         
-        <h1>Params</h1>
+        <h3>Params</h3>
         <code>
         {{ printf "%s" $.Params }}
         </code>
         
-        <h1>Page Variables</h1>
+        <h3>Page Variables</h3>
         <pre>
         {{ printf "%#v" $.Page }}
         </pre>
 
-        <h2>All variables scoped to the current context</h2>
+        <h4>All variables scoped to the current context</h4>
         <code>
         {{ printf "%#v" . }}    
         </code>

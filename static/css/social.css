@@ -2,12 +2,13 @@
 
 .microblog_conversation {
   grid-area: contentSection;
-  margin-top: var(--flow-space, 1rem);
+  margin-top: var(--flow-space, .5rem);
 }
 
 .microblog_reply_form,
 .microblog_post {
   padding: min(12px, 1rem);
+  margin-top: var(--flow-space, .5rem);
   /* border-top: 1px solid var(--background-alt); */
   background-color: var(--background-alt);
   border-radius: var(--border-radius, 0.5rem);

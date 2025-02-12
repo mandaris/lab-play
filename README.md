@@ -75,3 +75,12 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Remove the `text-wrap: balance` from the `h1` element
 - Move `text-wrap: pretty` from `html` to `.post-body`
 - Add `line-height: normal` to `.lozenge`
+- Change the flow of the `.microblog-conversation` 
+- Move `twitter:card` meta data to another place in the header
+
+
+1.1.9
+- Change heading level for debug information
+- Remove trailing slashes in head tags
+- Make `h1` bigger
+- Adjust spacing for `.microblog_post`
