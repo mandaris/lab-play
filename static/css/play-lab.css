@@ -286,7 +286,7 @@ iframe,
 .lite-youtube,
 canvas {
   display: block;
-  max-width: 85%;
+  max-width: 95%;
   height: auto;
   margin-inline-start: auto;
   margin-inline-end: auto;
@@ -352,7 +352,7 @@ h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 h2, h3, h4, h5, h6 {

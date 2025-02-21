@@ -1,9 +1,11 @@
 {{ define "main" }}
 {{ "<!-- From page/single.html -->" | safeHTML }}
 <article class="h-entry | object-effect | flow">
-<header class="p-name">
-  <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+<header>
+  <h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 </header>
+<div itemprop="mainEntity">
 {{ .Content }}
+</div>
 </article>
 {{ end }}

@@ -84,3 +84,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Remove trailing slashes in head tags
 - Make `h1` bigger
 - Adjust spacing for `.microblog_post`
+
+1.1.10
+- Adjust size of header
+- Adjust size of image
+- Changes to `404.html` and `single.html` to add more schema.org information
