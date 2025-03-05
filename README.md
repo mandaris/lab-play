@@ -89,3 +89,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Adjust size of header
 - Adjust size of image
 - Changes to `404.html` and `single.html` to add more schema.org information
+
+1.2.00
+- Change header tag for `_default/list.html`
+- Change `rss.html` and `list.json.json` to have a title for microposts
