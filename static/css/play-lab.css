@@ -291,7 +291,7 @@ canvas {
   margin-inline-start: auto;
   margin-inline-end: auto;
   border-radius: var(--border-radius, 0.5rem);
-  filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem);
 }
 
 .lite-youtube {
@@ -602,11 +602,11 @@ hr {
 .style-box,
 figure,
 .object-effect {
-  border: 1px solid currentColor;
-  filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
+  border: 1px solid var(--accent, currentColor);
   background-color: var(--background-alt);
-  padding: min(12px, 1em);
+  padding: min(10px, 1em);
   border-radius: var(--border-radius, 0.5rem);
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
 }
 
 figcaption {
@@ -623,7 +623,7 @@ a.footnote-ref,
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem);
   padding: 0px 12px;
   border-radius: 1em;
   line-height: normal;
@@ -644,13 +644,11 @@ a.footnote-ref:hover,
     max-width: calc(50% - 2em);
     float: right;
     margin-left: 1em;
-    margin-right: 1em;
   }
 
   .FloatLeft {
     max-width: calc(50% - 2em);
     float: left;
-    margin-left: 1em;
     margin-right: 1em;
   }
 }
@@ -699,11 +697,13 @@ table {
 
 .highlight {
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: var(--border-radius, 10px);
+  border: 1px solid currentColor;
   overflow: auto;
 
   .lntable {
     width: 100%;
+    max-width: unset;
   }
 
   /* .chroma {
@@ -857,11 +857,11 @@ pre.mermaid {
 }
 
 details {
-  border: 1px solid currentColor;
+  border: 1px solid var(--accent);
   border-radius: var(--border-radius, 0.5rem);
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
-  background-color: var(--background-alt);
-  padding: .5rem;
+  background-color: var(--background-mid);
+  padding: min(10px, .5rem);
 
   &::details-content {
     opacity: 0;
@@ -879,6 +879,5 @@ details {
 }
 
 summary {
-  margin-inline-start: 1rem;
   list-style-position: outside;
 }

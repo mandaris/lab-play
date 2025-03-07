@@ -93,3 +93,9 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.2.00
 - Change header tag for `_default/list.html`
 - Change `rss.html` and `list.json.json` to have a title for microposts
+
+1.2.01
+- Change border radius on `.highlight`
+- Change syntax color scheme to Nord to better match the rest of the theme
+- Modifications to `padding` and `background` on `<details>` element
+- Change to shadow on `lozenge` class
