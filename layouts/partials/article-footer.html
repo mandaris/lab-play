@@ -29,7 +29,7 @@
           {{ end }}
         </span>
     {{- end }}
-    <meta itemprop="wordCount" content="{{ .WordCount }}" />    
+    <meta itemprop="wordCount" content="{{ .WordCount }}">    
     </p>
     
     <p class="right-column">
@@ -42,33 +42,6 @@
     </p>
     
     {{ partial "author.html" .}}
-    {{ if .Param "themeDebug" }}   
-    {{ "<!-- Debugging Details --> " | safeHTML }}
-    <details
-    {{ if not .Params.showDebugInfo }}style="display: none;"{{ end }}
-    class="debug">
-        <summary>Debug Information</summary>
-        <h3>Permalink</h3>
-        <code>
-        {{ printf "%#v \n" .Permalink }}
-        </code>
-        
-        <h3>Params</h3>
-        <code>
-        {{ printf "%s" $.Params }}
-        </code>
-        
-        <h3>Page Variables</h3>
-        <pre>
-        {{ printf "%#v" $.Page }}
-        </pre>
-
-        <h4>All variables scoped to the current context</h4>
-        <code>
-        {{ printf "%#v" . }}    
-        </code>
-    </details>
-    {{- end -}}
 </footer>
 {{ if .Page.Store.Get "hasMermaid" }}
 <script type="module">

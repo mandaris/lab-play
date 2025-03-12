@@ -99,3 +99,10 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Change syntax color scheme to Nord to better match the rest of the theme
 - Modifications to `padding` and `background` on `<details>` element
 - Change to shadow on `lozenge` class
+
+1.3.00
+- Remove the debug information
+- Point to static image for OpenGraph image
+- Modify size for `FloatLeft` and `FloatRight` classes
+- Remove trailing slashes in some meta tags
+- Adjust drop shadow on image

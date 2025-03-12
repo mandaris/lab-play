@@ -291,7 +291,7 @@ canvas {
   margin-inline-start: auto;
   margin-inline-end: auto;
   border-radius: var(--border-radius, 0.5rem);
-  filter: drop-shadow(0.1rem 0.1rem 0.1rem);
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem);
 }
 
 .lite-youtube {
@@ -528,6 +528,10 @@ ol, ul {
   margin-inline-start: 1.5em;
 }
 
+ul>li::marker {
+  font-size: large;
+}
+
 /* task list and its checkboxes */
 ul>li:has(> input[type="checkbox"]) {
   list-style: none;
@@ -590,6 +594,7 @@ hr {
   margin: auto;
   overflow: auto;
 }
+
 /* Utility */
 .flow>*+* {
   margin-top: var(--flow-space, 1rem);
@@ -641,13 +646,13 @@ a.footnote-ref:hover,
 
 @container (min-width: 50ch) {
   .FloatRight {
-    max-width: calc(50% - 2em);
+    max-width: calc(40% - 2em);
     float: right;
     margin-left: 1em;
   }
 
   .FloatLeft {
-    max-width: calc(50% - 2em);
+    max-width: calc(40% - 2em);
     float: left;
     margin-right: 1em;
   }
@@ -879,5 +884,6 @@ details {
 }
 
 summary {
+  margin-inline-start: 0.5rem;
   list-style-position: outside;
 }
