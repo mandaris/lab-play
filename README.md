@@ -106,3 +106,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Modify size for `FloatLeft` and `FloatRight` classes
 - Remove trailing slashes in some meta tags
 - Adjust drop shadow on image
+
+1.3.01
+- Change the OpenGraph image
+- Remove additional trailing slash and wrap row
