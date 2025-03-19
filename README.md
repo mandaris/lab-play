@@ -121,3 +121,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.3.04
 - Add information back to the invidual posts and use a hidden keyword
+
+1.3.05
+- Change fontcolor on `lozenge` class for accessibility in dark mode
+- Add text to empty links used for author information
+- Return the proper padding for admonitions used in blockquote elements

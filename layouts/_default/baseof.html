@@ -7,7 +7,7 @@
   <a class="accessibility_label" href="#main" id="skip-to-main-content-link">Skip to main content</a>
 {{ partial "site-navigation.html" . }}
 <main class="contentSection | flow | h-feed" id="main">
-<a href="/" class="u-author h-card"></a>
+<a hidden aria-hidden="true" href="#website-author" class="u-author">Link to Author Information</a>
 {{ block "main" .}}{{ end }}
 </main>
 {{ partial "author-info-aside.html" . }}

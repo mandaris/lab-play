@@ -5,6 +5,7 @@
 
 .admonition {
   margin: 1em;
+  padding-left: 0;
   border: 2px solid var(--admonition-color);
   border-left: 6px solid var(--admonition-color);
   border-right: 3px solid var(--admonition-color);

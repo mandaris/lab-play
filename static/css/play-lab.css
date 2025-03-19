@@ -625,7 +625,7 @@ figcaption {
 a.footnote-ref,
 .lozenge {
   background-color: var(--accent-alt);
-  color: var(--text);
+  color: var(--nordDark1);
   text-decoration: none;
   text-align: center;
   display: inline-block;
