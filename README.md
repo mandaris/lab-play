@@ -115,3 +115,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Adjustments to admonitions/callout code
 - Change microformats for author information
 - Slight changes to default OpenGraph image
+
+1.3.03
+- Add author link as referenced in the [indieweb authorship article](https://indieweb.org/authorship#Authorship_for_streams_of_posts)
