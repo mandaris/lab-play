@@ -5,40 +5,15 @@
 
 .admonition {
   margin: 1em;
-  padding: 0;
+  border: 2px solid var(--admonition-color);
+  border-left: 6px solid var(--admonition-color);
+  border-right: 3px solid var(--admonition-color);
   border-radius: var(--border-radius, 1rem);
-  box-shadow: 0 1px 3px var(--admonition-color);
+  box-shadow: 0 2px 4px var(--admonition-color);
   transition: all 0.3s ease;
-  
-  border: 1px solid var(--admonition-color);
-  border-left: 5px solid var(--admonition-color);
 }
 
-.admonition-header {
-  padding: 0.5rem;
-  display: flex;
-  align-items: stretch;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0 var(--border-radius, 10px) 0 0;
-  color: var(--admonition-color);
-  background: color-mix(in srgb, currentColor, transparent 75%);
-  
-  svg {
-    width: 1.1em;
-    height: 1.1em;
-    margin-right: 0.5rem;
-  }
-
-  h3 {
-    color: var(--text);
-    font-size: large;
-  }
-}
-
-.admonition-content {
-  padding: 0.5rem;
-}
 
 .admonition.notify,
 .admonition.note {
@@ -50,7 +25,7 @@
 }
 
 .admonition.important {
-  --admonition-color: rebeccapurple;
+  --admonition-color: light-dark(rebeccapurple, mediumorchid);
 }
 
 .admonition.idea {
@@ -93,7 +68,7 @@
 }
 
 .admonition.question {
-  --admonition-color: midnightblue;
+  --admonition-color: light-dark(midnightblue, deepskyblue);
 }
 
 .admonition.info {
@@ -101,5 +76,41 @@
 }
 
 .admonition.code {
-  --admonition-color: purple;
+  --admonition-color: green;
+}
+
+.admonition.bug,
+.admonition.fail,
+.admonition.failure,
+.admonition.missing {
+  --admonition-color: red;
+}
+
+
+.admonition-header {
+  padding: 0.3rem;
+  display: flex;
+  align-items: stretch;
+
+  border-radius: 0 var(--border-radius, 1rem) 0 0;
+  /* border-radius: inherit; */
+  color: var(--admonition-color);
+  background: color-mix(in srgb, currentColor, transparent 90%);
+  /* border-bottom: 1px solid currentColor; */
+  /* border-bottom-right-radius: ; */
+  
+  svg {
+    width: 2rem;
+    /* margin-right: 0.5rem; */
+  }
+
+  h3 {
+    color: var(--text);
+    font-size: large;
+  }
+}
+
+.admonition-content {
+  border-top: 1px solid var(--admonition-color);
+  padding: 0.5rem;
 }

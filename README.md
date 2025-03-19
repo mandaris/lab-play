@@ -110,3 +110,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.3.01
 - Change the OpenGraph image
 - Remove additional trailing slash and wrap row
+
+1.3.02
+- Adjustments to admonitions/callout code
+- Change microformats for author information
+- Slight changes to default OpenGraph image

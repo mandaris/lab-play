@@ -1,15 +1,16 @@
+{{- /* Initialize dictionary to store icon mappings */ -}}
 {{- $icons := dict
   "abstract"    "file-description.svg"
+  "bug"         "bug.svg"
   "caution"     "alert-triangle.svg"
+  "cite"        "quote.svg"
   "code"        "code.svg"
   "conclusion"  "file-check.svg"
   "danger"      "alert-square.svg"
-  "error"       "exclamation-circle.svg"
   "example"     "chalkboard.svg"
   "experiment"  "flask.svg"
   "goal"        "target.svg"
   "idea"        "bulb.svg"
-  "important"   "exclamation-circle.svg"
   "info"        "info-circle.svg"
   "memo"        "note.svg"
   "note"        "notes.svg"
@@ -19,8 +20,22 @@
   "success"     "circle-check.svg"
   "task"        "list-check.svg"
   "tip"         "bulb.svg"
-  "warning"     "exclamation-circle.svg"
+  "todo"        "list-check.svg"
 }}
+
+{{- /* Define a list of keys that should share the same icon */ -}}
+{{ $keys := slice "important" "warning" "error" }}
+{{- range $keys }}
+  {{- /* Merge each key into the dictionary with the same icon value */ -}}
+  {{- $icons = merge $icons (dict . "exclamation-circle.svg") }}
+{{- end }}
+
+{{- /* Define a list of keys that should share the same icon */ -}}
+{{ $keys := slice "failure" "fail" "missing" }}
+{{- range $keys }}
+  {{- /* Merge each key into the dictionary with the same icon value */ -}}
+  {{- $icons = merge $icons (dict . "xbox-x.svg") }}
+{{- end }}
 
 
 {{- if eq .Type "alert" }}
