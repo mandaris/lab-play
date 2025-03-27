@@ -291,7 +291,7 @@ canvas {
   margin-inline-start: auto;
   margin-inline-end: auto;
   border-radius: var(--border-radius, 0.5rem);
-  filter: drop-shadow(0.2rem 0.2rem 0.3rem);
+  filter: drop-shadow(0.2rem 0.2rem 0.15rem);
 }
 
 .lite-youtube {
@@ -886,4 +886,8 @@ details {
 
 summary {
   margin-inline-start: 1rem;
+}
+
+.accent-color {
+  color: var(--accent);
 }

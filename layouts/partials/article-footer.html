@@ -4,7 +4,7 @@
     {{- with .Param "categories" -}}
     {{ range $CategoryArray, $Category := (. | sort) -}}
         {{- if gt $CategoryArray 0 -}}
-        <span> •</span>
+        <span class="accent-color"> •</span>
         {{- end }}
         <a href="/categories/{{ $Category | urlize }}" 
           class="p-category articleSection lozenge" rel="tag"

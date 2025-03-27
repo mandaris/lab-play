@@ -126,3 +126,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Change fontcolor on `lozenge` class for accessibility in dark mode
 - Add text to empty links used for author information
 - Return the proper padding for admonitions used in blockquote elements
+
+1.3.06
+- Make adjustments to shadows on images
+- Add accent color to category seperator
+- Move invisible link to bottom of `<main>`
