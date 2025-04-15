@@ -131,3 +131,13 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Make adjustments to shadows on images
 - Add accent color to category seperator
 - Move invisible link to bottom of `<main>`
+
+1.4.0
+- Change the font to [Atkinson Hyperlegible](https://www.brailleinstitute.org/freefont/)
+- Make the index only show the posts with titles
+- Attempt to remove `h-feed` from single pages
+- Correct header values on archive page
+- Add `view-transition` to meta tag in header
+- Change default OpenGraph image to not have words
+- Remove `border` and `filter` around `<figure>`
+- Add `margin-top` and change `line-height` on `<figcaption>`
