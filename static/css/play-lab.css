@@ -906,6 +906,11 @@ summary {
   color: var(--accent);
 }
 
+/* Form controls */
+::placeholder {
+  color: var(--text-alt);
+}
+
 input[readonly], input[disabled] {
   cursor: not-allowed;
 }
