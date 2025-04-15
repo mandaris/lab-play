@@ -628,6 +628,8 @@ figure {
 
 figcaption {
   text-align: center;
+  margin-top: .5rem;
+  line-height: normal;
 }
 
 .conversation-on-mb,
