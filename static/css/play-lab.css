@@ -636,6 +636,7 @@ figcaption {
 .reply-on-mastodon,
 .reply-by-email,
 a.footnote-ref,
+button,
 .lozenge {
   background-color: var(--accent-alt);
   color: var(--nordDark1);
@@ -903,4 +904,8 @@ summary {
 
 .accent-color {
   color: var(--accent);
+}
+
+input[readonly], input[disabled] {
+  cursor: not-allowed;
 }

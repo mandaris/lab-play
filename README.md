@@ -141,3 +141,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Change default OpenGraph image to not have words
 - Remove `border` and `filter` around `<figure>`
 - Add `margin-top` and change `line-height` on `<figcaption>`
+
+
+1.4.01
+- Add styling to `<button>`
+- Add `cursor` to readonly and disabled input
