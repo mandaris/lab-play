@@ -68,7 +68,13 @@
 
   --text-decoration-thickness: 0.1em;
 }
-
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/AtkinsonHyperlegibleNext-Regular.woff2") format('woff2');
+  src: url("/fonts/AtkinsonHyperlegibleNext-Regular.woff2") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--nordDark3);
@@ -95,7 +101,7 @@
 }
 
 html {
-  font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, Verdana, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+  font-family: "Atkinson", ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, Verdana, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
   line-height: 1.6;
   font-size: 1.3rem;
   -moz-text-size-adjust: none;
