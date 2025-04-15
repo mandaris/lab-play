@@ -6,7 +6,11 @@
 <body class="body_class">
   <a class="accessibility_label" href="#main" id="skip-to-main-content-link">Skip to main content</a>
 {{ partial "site-navigation.html" . }}
-<main class="contentSection | flow | h-feed" id="main">
+<main class="contentSection | flow 
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
+{{- print " | h-feed" -}}
+{{- end -}}
+" id="main">
 {{ block "main" .}}{{ end }}
 <a hidden aria-hidden="true" href="/authors/mandaris" class="u-author">Link to Author Information</a>
 </main>
