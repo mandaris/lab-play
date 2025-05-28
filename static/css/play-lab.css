@@ -68,6 +68,7 @@
 
   --text-decoration-thickness: 0.1em;
 }
+
 @font-face {
   font-family: "Atkinson";
   src: url("/fonts/AtkinsonHyperlegibleNext-Regular.woff2") format('woff2');
@@ -100,6 +101,15 @@
   padding: 0;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}
+
 html {
   font-family: "Atkinson", ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, Verdana, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
   line-height: 1.6;
@@ -116,10 +126,6 @@ body {
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
   margin: 3px;
-}
-
-@view-transition {
-  navigation: auto;
 }
 
 /* Composition */
@@ -213,7 +219,7 @@ body {
 
 .body_class {
   display: grid;
-  gap: 10px;
+  gap: min(8px, 1rem);
   grid-template-columns: minmax(300px, 65ch);
   grid-template-areas:
     "topping"
@@ -229,7 +235,7 @@ body {
   .body_class {
     /* grid-template-columns: minmax(80ch, 1fr) minmax(0, 1fr); */
     /* grid-template-columns: repeat(auto-fill, minmax(70ch, 1fr)); */
-    grid-template-columns: minmax(750px, 800px) minmax(200px, 375px);
+    grid-template-columns: minmax(750px, 75ch) minmax(200px, 375px);
     justify-content: center;
     grid-template-areas:
       "topping topping"
@@ -297,7 +303,12 @@ canvas {
   margin-inline-start: auto;
   margin-inline-end: auto;
   border-radius: var(--border-radius, 0.5rem);
-  filter: drop-shadow(0.2rem 0.2rem 0.15rem);
+  filter: drop-shadow(0.1rem 0.2rem 0.5rem);
+}
+
+p>img:only-child {
+  display: block;
+  margin: auto;
 }
 
 .lite-youtube {
@@ -332,7 +343,7 @@ audio::-webkit-media-controls-play-button {
 }
 
 blockquote {
-  border-left: 5px solid var(--accent);
+  border-left: 8px solid var(--accent);
   padding-left: .5rem;
   background-color: var(--background-mid);
   margin-inline-start: .5rem;
@@ -358,7 +369,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 h2, h3, h4, h5, h6 {
@@ -647,6 +658,7 @@ hr {
 }
 
 figure {
+  padding: min(8px, 1rem);
   border: none;
   filter: none;
 }
@@ -676,6 +688,7 @@ button,
   text-decoration: none;
   text-align: center;
   display: inline-block;
+  box-shadow: 0.1rem 0.1rem 0.3rem;
   padding: 0px 12px;
   border-radius: 1em;
   line-height: normal;
@@ -693,6 +706,8 @@ button:not([disabled]):hover,
   background-color: var(--accent-opposite);
   box-shadow: var(--accent-opposite-alt) 0.1rem 0.1rem 0.2rem;
   /* filter: drop-shadow(0.1rem 0.1rem 0.5rem); */
+  transition: all 1s;
+  transition-timing-function: cubic-bezier(.7, 0, .3, 1);
 }
 
 @container (min-width: 50ch) {
