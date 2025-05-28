@@ -146,3 +146,12 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.4.01
 - Add styling to `<button>`
 - Add `cursor` to readonly and disabled input
+- Add styling to `::placeholder`
+
+1.5.00
+- Add Share and copy to clipboard buttons
+- Add gist shortcode to avoid future depreciation
+- Adjust white space in `list.archivehtml.html` around titles
+- Change the format of the `replies.html` to better seperate the entries
+- Make categories line up in two columns for taxonimy listings
+- Other style adjustments that I made over time
