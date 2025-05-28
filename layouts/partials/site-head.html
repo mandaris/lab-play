@@ -50,7 +50,7 @@
 {{ end }}
 <meta property="og:type" content="article">
 
-{{ $iso8601 := "2006-01-02T15:04:05Z07:00" }}
+{{- $iso8601 := "2006-01-02T15:04:05Z07:00" }}
 {{- with .PublishDate }}
 <meta property="article:published_time" 
   {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
