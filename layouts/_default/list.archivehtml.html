@@ -2,25 +2,24 @@
 {{ "<!-- list.archivehtml.html -->" | safeHTML }}
 <article class="object-effect | flow">
 	<h2 class="list-title-header">Archive</h2>
-	{{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
-	{{ if gt (len $list) 0 }}
+	{{- $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+	{{- if gt (len $list) 0 }}
 		<section>
 		<h3>Categories</h3>
 			{{ partial "categories-with-count.html" . }}
 		</section>
-		
-	{{ end }}
+	{{- end }}
 	
-	{{ $list := (where .Site.Pages "Type" "post") }}
+	{{- $list := (where .Site.Pages "Type" "post") }}
 	<section class="archive_posts | h-feed">
 	<h3 class="p-name">All Posts</h3>
 		{{ range $list -}}
-			<p class="h-entry">
+			<p class="h-entry | archive-summary">
 				<a href="{{ .Permalink }}" class="u-url"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</time></a>:
-				{{- if .Title -}}
+				{{ if .Title }}
 					<span class="p-name"><b>{{ .Title }}</b></span> 
-				{{- end -}}
 				  <span class="p-summary">{{ .Summary | truncate 100 }}</span>
+				{{- end }}
 			</p>
 		{{- end }}
 	</section>
