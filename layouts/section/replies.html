@@ -1,16 +1,24 @@
 {{ define "main" }}
-<section class="object-effect">
-  <h2>Replies</h2>
+<section class="h-feed | flow">
+  <h2>Last 50 Replies</h2>
   {{- $list := first 50 (where .Data.Pages.ByDate.Reverse "Type" "reply") }}
 		{{- range $list }}
-		<article class="h-entry">
-			{{ if .Title }}
+		<article class="h-entry | henry | post | object-effect">
+			{{- if .Title }}
 			<h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-			<p class="post-date">{{ .Date.Format "Monday, January 2, 2006" }}</p>
-			{{ else }}
-			<p class="post-date btm-margin"><a href="{{ .Permalink }}">{{ .Date.Format "Monday, January 2, 2006" }} →</a></p>
-			{{ end }}
+			{{- end }}
+			<div class="p-summary | post-body | entry-content | e-content"
+  itemprop="articleBody">
 			{{ .Content }}
+			</div>
+			 <p class="right-column">
+        <a href="{{ .Permalink }}" class="lozenge | u-uid">
+        <time class="dt-published" itemprop="dateCreated datePublished" 
+            {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr -}}>
+            {{- .Date.Format (default "January 2, 2006" .Site.Params.date_format) }}
+        </time>
+        </a>
+    </p>
 		</article>
 		{{ end }}
 </section>
