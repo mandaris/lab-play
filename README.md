@@ -162,3 +162,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Add styling to `.icon` class 
 - Add `text-shadow` to headers
 - Add icons to share actions
+
+1.5.02
+- Adjust colors on code blocks to make them WCAG AA compliant
