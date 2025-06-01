@@ -126,7 +126,24 @@ class ShareActions extends HTMLElement {
           this.hasShareSupport
             ? `
             <button class="button" data-method="share">
-            Share</button>
+            <svg
+  aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-share-2"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 9h-1a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-8a2 2 0 0 0 -2 -2h-1" />
+  <path d="M12 14v-11" />
+  <path d="M9 6l3 -3l3 3" />
+</svg>Share</button>
             <div id="share-alert" role="alert" popover></div>
         `
             : ""
@@ -134,7 +151,24 @@ class ShareActions extends HTMLElement {
         ${
           this.hasClipboardSupport
             ? `
-            <button class="button" data-method="clipboard">Copy URL</button>
+            <button class="button" data-method="clipboard">
+            <svg
+  aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+  <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+</svg>Copy URL</button>
             <div id="clipboart-copy-alert" role="alert" popover></div>
         `
             : ""

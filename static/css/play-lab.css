@@ -366,10 +366,11 @@ h6 {
   transition: all .5s;
   transition-timing-function: cubic-bezier(.7, 0, .3, 1);
   line-height: normal;
+  text-shadow: 1px 1px var(--accent);
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h2, h3, h4, h5, h6 {
@@ -398,15 +399,17 @@ a {
   text-decoration-color: var(--accent-alt);
   text-decoration-thickness: var(--text-decoration-thickness, .1em);
   text-decoration-skip-ink: all;
-  transition: all .5s;
+  transition: all .25s;
   transition-timing-function: cubic-bezier(.7, 0, .3, 1);
 }
 
 a:hover,
 a.focus {
   /* box-shadow: inset 0 -1.5em 0 var(--accent-alt); */
-  color: var(--accent-opposite-alt);
+  /* color: var(--accent-opposite-alt); */
+  text-shadow: 1px 1px var(--accent-alt);
   text-decoration-color: var(--accent-opposite);
+  text-decoration-style: wavy;
 }
 
 a.no-decoration {
@@ -897,7 +900,7 @@ pre.mermaid {
   }
 }
 
-.ico {
+.ico, .icon {
   height: 1.15em;
   width: 1.15em;
   display: inline;

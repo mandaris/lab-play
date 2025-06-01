@@ -155,3 +155,10 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Change the format of the `replies.html` to better seperate the entries
 - Make categories line up in two columns for taxonimy listings
 - Other style adjustments that I made over time
+
+1.5.01
+- Place a `div` around the `replies.html` header
+- Adjust `h1` size to be smaller
+- Add styling to `.icon` class 
+- Add `text-shadow` to headers
+- Add icons to share actions
