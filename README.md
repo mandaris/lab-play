@@ -165,3 +165,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.5.02
 - Adjust colors on code blocks to make them WCAG AA compliant
+
+1.5.03
+- Remove `defer` from the conversation script
+- Add aria-label to author information
