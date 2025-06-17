@@ -331,11 +331,13 @@ audio {
   margin-left: 1em;
   max-width: calc(100% - 2em);
   border-radius: 7px;
+  filter: drop-shadow(0.1rem 0.2rem 0.5rem);
 }
 
 audio::-webkit-media-controls-panel {
   color: var(--accent);
   background-color: var(--background-mid);
+  filter: drop-shadow(0.1rem 0.2rem 0.5rem);
 }
 
 audio::-webkit-media-controls-play-button {
@@ -366,7 +368,7 @@ h6 {
   transition: all .5s;
   transition-timing-function: cubic-bezier(.7, 0, .3, 1);
   line-height: normal;
-  text-shadow: 1px 1px var(--accent);
+  text-shadow: 1px 1px 1px var(--accent);
 }
 
 h1 {
@@ -407,7 +409,7 @@ a:hover,
 a.focus {
   /* box-shadow: inset 0 -1.5em 0 var(--accent-alt); */
   /* color: var(--accent-opposite-alt); */
-  text-shadow: 1px 1px var(--accent-alt);
+  text-shadow: 1px 1px 1px var(--accent-opposite-alt);
   text-decoration-color: var(--accent-opposite);
   text-decoration-style: wavy;
 }
@@ -439,6 +441,7 @@ a h1 {
 a:hover h1,
 a:focus h1 {
   color: var(--accent-opposite-alt);
+  text-shadow: 1px 1px 1px var(--accent-opposite);
   text-decoration-color: var(--accent-opposite);
 }
 
@@ -683,13 +686,15 @@ input, button {
 .reply-by-email,
 a.footnote-ref,
 button,
+.microblog_time>a,
 .lozenge {
   background-color: var(--accent-alt);
   color: var(--nordDark1);
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  box-shadow: 0.1rem 0.1rem 0.3rem;
+  border: .5px solid light-dark(var(--nordDark1), var(--nordLight3));
+  box-shadow: light-dark(var(--nordDark1), var(--nordLight3)) 0.1rem 0.1rem 0.2rem;
   padding: 0px 12px;
   border-radius: 1em;
   line-height: normal;
@@ -970,4 +975,9 @@ button[readonly], button[disabled] {
 
 button[disabled] {
   color: dimgray;
+}
+
+.footnotes > hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

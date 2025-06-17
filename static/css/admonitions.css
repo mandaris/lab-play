@@ -3,6 +3,7 @@
   --admonition-color: var(--accent, #5e81ac);
 }
 
+/* Basic styling logic */
 .admonition {
   margin: 1em;
   padding-left: 0;
@@ -14,7 +15,31 @@
   transition: all 0.3s ease;
 }
 
+.admonition-header {
+  padding: 0.3rem;
+  display: flex;
+  align-items: stretch;
 
+  border-radius: 0 var(--border-radius, 1rem) 0 0;
+  /* border-radius: inherit; */
+  color: var(--admonition-color);
+  background: color-mix(in srgb, currentColor, transparent 90%);
+  /* border-bottom: 1px solid currentColor; */
+  /* border-bottom-right-radius: ; */
+  
+  h3 {
+    color: var(--text);
+    font-size: large;
+    margin-inline: .2rem;
+  }
+}
+
+.admonition-content {
+  border-top: 1px solid var(--admonition-color);
+  padding: 0.5rem;
+}
+
+/* Different color options */
 
 .admonition.notify,
 .admonition.note {
@@ -88,30 +113,3 @@
 }
 
 
-.admonition-header {
-  padding: 0.3rem;
-  display: flex;
-  align-items: stretch;
-
-  border-radius: 0 var(--border-radius, 1rem) 0 0;
-  /* border-radius: inherit; */
-  color: var(--admonition-color);
-  background: color-mix(in srgb, currentColor, transparent 90%);
-  /* border-bottom: 1px solid currentColor; */
-  /* border-bottom-right-radius: ; */
-  
-  svg {
-    width: 2rem;
-    /* margin-right: 0.5rem; */
-  }
-
-  h3 {
-    color: var(--text);
-    font-size: large;
-  }
-}
-
-.admonition-content {
-  border-top: 1px solid var(--admonition-color);
-  padding: 0.5rem;
-}

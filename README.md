@@ -169,3 +169,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.5.03
 - Remove `defer` from the conversation script
 - Add aria-label to author information
+
+1.5.04
+- Add visual `filter` to audio element
+- Add `margin-top` and `margin-bottom` to the `<hr>` in `<blockquote>`
+- Rearrange the classes in `admonitions.css`
