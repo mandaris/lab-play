@@ -174,3 +174,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Add visual `filter` to audio element
 - Add `margin-top` and `margin-bottom` to the `<hr>` in `<blockquote>`
 - Rearrange the classes in `admonitions.css`
+
+1.5.05
+- Change `favicon.svg` back to original
+- Create `bimi.svg` to be used for BIMI
