@@ -178,3 +178,9 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.5.05
 - Change `favicon.svg` back to original
 - Create `bimi.svg` to be used for BIMI
+
+1.5.06
+- Remove unused tabler SVGs from repository
+- Move filter values to `:root`
+- Add changes to `site.manifest`
+- Change meta tags on author information

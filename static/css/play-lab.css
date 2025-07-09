@@ -66,7 +66,12 @@
   /* Global Border Radius */
   --border-radius: 10px;
 
+  /* Other styling variables */
   --text-decoration-thickness: 0.1em;
+  --standard-filter: drop-shadow(0.1rem 0.2rem 0.5rem var(--accent));
+  /* drop-shadow(0.1rem 0.2rem 0.5rem); */
+  /* drop-shadow(0.1rem 0.1rem 0.1rem var(--accent)); */
+  --standard-transition: all 0.5s allow-discrete;
 }
 
 @font-face {
@@ -76,6 +81,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--nordDark3);
@@ -107,7 +113,7 @@
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.5s;
+  animation-duration: var(--standard-transition);
 }
 
 html {
@@ -153,6 +159,7 @@ body {
 
 .plugin-container {
   grid-area: contentSection;
+  line-height: 2rem;
 }
 
 .microblog_conversation {
@@ -303,7 +310,7 @@ canvas {
   margin-inline-start: auto;
   margin-inline-end: auto;
   border-radius: var(--border-radius, 0.5rem);
-  filter: drop-shadow(0.1rem 0.2rem 0.5rem);
+  filter: var(--standard-filter);
 }
 
 p>img:only-child {
@@ -331,13 +338,14 @@ audio {
   margin-left: 1em;
   max-width: calc(100% - 2em);
   border-radius: 7px;
-  filter: drop-shadow(0.1rem 0.2rem 0.5rem);
+  filter: var(--standard-filter);
+  /* background-color: var(--accent); */
 }
 
 audio::-webkit-media-controls-panel {
   color: var(--accent);
   background-color: var(--background-mid);
-  filter: drop-shadow(0.1rem 0.2rem 0.5rem);
+  filter: var(--standard-filter);
 }
 
 audio::-webkit-media-controls-play-button {
@@ -365,8 +373,8 @@ h3,
 h4,
 h5,
 h6 {
-  transition: all .5s;
-  transition-timing-function: cubic-bezier(.7, 0, .3, 1);
+  transition: var(--standard-transition);
+  /* transition-timing-function: cubic-bezier(.7, 0, .3, 1); */
   line-height: normal;
   text-shadow: 1px 1px 1px var(--accent);
 }
@@ -712,7 +720,7 @@ button:not([disabled]):hover,
   background-color: var(--accent-opposite);
   box-shadow: var(--accent-opposite-alt) 0.1rem 0.1rem 0.2rem;
   /* filter: drop-shadow(0.1rem 0.1rem 0.5rem); */
-  transition: all 1s;
+  transition: var(--standard-transition);
   transition-timing-function: cubic-bezier(.7, 0, .3, 1);
 }
 
@@ -936,7 +944,7 @@ pre.mermaid {
 details {
   border: 1px solid var(--accent);
   border-radius: var(--border-radius, 0.5rem);
-  filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--accent));
+  filter: var(--standard-filter);
   background-color: var(--background-mid);
   padding: min(10px, .5rem);
 

@@ -18,5 +18,9 @@
   "theme_color": "#5e81ac",
   "background_color": "#eceff4",
   "display": "standalone",
-  "start_url": "/"
+  "start_url": "/",
+  "description": "Website for Mandaris Moore.",
+  "categories": [
+  	"personal",
+  	"indieWeb"]
 }
