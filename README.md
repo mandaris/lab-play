@@ -184,3 +184,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Move filter values to `:root`
 - Add changes to `site.manifest`
 - Change meta tags on author information
+
+1.5.07
+- Add tabler webfont
+- Correct issue with gist in dark mode

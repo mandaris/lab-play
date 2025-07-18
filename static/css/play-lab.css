@@ -760,7 +760,7 @@ button:not([disabled]):hover,
   display: inline-block;
 }
 
-table {
+table:not(.highlight) {
   margin: auto;
   border-collapse: collapse;
   width: 100%;
