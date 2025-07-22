@@ -1,6 +1,6 @@
 {{ "<!-- site-navigation.html -->" | safeHTML }}
 <header class="site-header | object-effect">
-  
+  <a class="accessibility_label" href="#main" id="skip-to-main-content-link" tabindex="0">Skip to main content</a>
   <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }} Home Page">
     <h1><img src="/svg/UserIcons_Mandaris_02.svg" decoding="async" class="logo" alt="">
     {{- .Site.Title -}}</h1>
@@ -10,11 +10,11 @@
   <menu>
   {{- range .Site.Menus.main }} 
   <li>
-    <a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+    <a class="lozenge" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
   </li>
   {{- end }}
   <li>
-    <a href="{{ "feed.xml" | absURL }}" rel="feed"
+    <a class="lozenge" href="{{ "feed.xml" | absURL }}" rel="feed"
       type="application/rss+xml" title="{{ $.Site.Title }} RSS Feed">
     RSS
     </a>

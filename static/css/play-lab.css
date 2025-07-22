@@ -375,8 +375,8 @@ h5,
 h6 {
   transition: var(--standard-transition);
   /* transition-timing-function: cubic-bezier(.7, 0, .3, 1); */
-  line-height: normal;
-  text-shadow: 1px 1px 1px var(--accent);
+  /* line-height: normal; */
+  /* text-shadow: 1px 1px 1px var(--accent); */
 }
 
 h1 {
@@ -393,6 +393,7 @@ code,
 kbd,
 samp {
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
@@ -463,7 +464,7 @@ dl code,
 kbd,
 samp {
   background-color: var(--background-mid);
-  padding: 1px;
+  padding: 5px;
   border-radius: 5px;
   border: solid var(--accent) 1px;
 }
@@ -653,7 +654,6 @@ hr {
 
 /* Utility */
 .flow>*+* {
-  margin-top: var(--flow-space, 1rem);
 }
 
 .radius {
@@ -743,8 +743,8 @@ button:not([disabled]):hover,
   top: -2em;
   left: 0;
   max-width: 100%;
-  background-color: var(--accent);
-  color: var(--background-alt);
+  background-color: light-dark(var(--nordDark1), var(--nordDark3));
+  color: light-dark(var(--nordLight3), var(--nordLight3));
   text-align: center;
   width: 100%;
   border-bottom-left-radius: var(--border-radius);

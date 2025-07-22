@@ -188,3 +188,10 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.5.07
 - Add tabler webfont
 - Correct issue with gist in dark mode
+
+1.6.00
+- Change the default for RSS to have the email email address
+- Add more contrast to syntax colors
+- Move skip to main context link into header and change color
+- Make navigation links into lozenge
+- Adjustments in style
