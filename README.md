@@ -195,3 +195,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Move skip to main context link into header and change color
 - Make navigation links into lozenge
 - Adjustments in style
+
+1.6.01
+- Change bimi to black and white version
+- Fix issue with rss
