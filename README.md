@@ -202,3 +202,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.6.02
 - Really fix rss. For real this time.
+
+1.6.03
+- This tims I _really_ fixed rss.
