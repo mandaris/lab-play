@@ -199,3 +199,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 1.6.01
 - Change bimi to black and white version
 - Fix issue with rss
+
+1.6.02
+- Really fix rss. For real this time.
