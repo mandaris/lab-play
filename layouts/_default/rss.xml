@@ -49,14 +49,14 @@
       {{- $itemTitle = .Title }}
       {{- else }}
       {{- $niceDate := .Date.Format (default "January 2, 2006 3:04 PM" .Site.Params.date_format) }}
-      {{- $itemTitle := printf "MicroPost - %s%s" $niceDate | printf "%s"}}
+      {{- $itemTitle = printf "MicroPost - %s%s" $niceDate | printf "%s"}}
       {{- end }}
       <title>{{ $itemTitle }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Content | safeHTML }}</description>
+      <description>{{ .Content | html }}</description>
     </item>
     {{- end }}
   </channel>
