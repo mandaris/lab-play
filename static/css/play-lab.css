@@ -113,7 +113,7 @@
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: var(--standard-transition);
+  animation-duration: var(--standard-transition, 0.5s);
 }
 
 html {

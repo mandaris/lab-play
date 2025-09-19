@@ -208,3 +208,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.6.04
 - Add Titles for micro posts in rss
+
+1.6.05
+- Restore transition behavior
