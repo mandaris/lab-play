@@ -109,6 +109,7 @@
 
 @view-transition {
   navigation: auto;
+  duration: 0s;
 }
 
 ::view-transition-old(root),

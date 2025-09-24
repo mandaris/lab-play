@@ -211,3 +211,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.6.05
 - Restore transition behavior
+
+1.6.06
+- Minor changes to transition behavior
