@@ -1,0 +1,53 @@
+{
+  "params": {
+      "themeVersion": "0.1.00",
+      "author": {
+        "name": "Mandaris",
+        "email": "info@MandarisMoore.com",
+        "avatar": "https://micro.blog/mandaris/avatar.jpg",
+        "username": "mandaris",
+        "description": "A High-quality stranger. I like be a good husband, father, and friend. This blog is my way of expressing myself."
+      }
+
+  },
+  "markup": {
+    "highlight": {
+      "noClasses": false
+    },
+    "tableOfContents": {
+      "endLevel": 5,
+      "startLevel": 3
+    },
+    "goldmark": {
+      "parser": {
+        "wrapStandAloneImageWithinParagraph": false,
+        "attribute": {
+          "block": true
+        }
+      },
+      "extensions": {
+        "passthrough": {
+          "delimiters": {
+            "block": [
+              [
+                "\\[",
+                "\\]"
+              ],
+              [
+                "$$",
+                "$$"
+              ]
+            ],
+            "inline": [
+              [
+                "\\(",
+                "\\)"
+              ]
+            ]
+          },
+          "enable": true
+        }
+      }
+    }
+  }
+}
