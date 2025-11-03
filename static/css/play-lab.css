@@ -109,7 +109,7 @@
 
 @view-transition {
   navigation: auto;
-  duration: 0s;
+  duration: var(--standard-transition, 0.5s);
 }
 
 ::view-transition-old(root),
@@ -228,7 +228,7 @@ body {
 .body_class {
   display: grid;
   gap: min(8px, 1rem);
-  grid-template-columns: minmax(300px, 65ch);
+  grid-template-columns: minmax(300px, 75ch);
   grid-template-areas:
     "topping"
     "contentSection"
@@ -238,6 +238,7 @@ body {
   background-color: var(--background);
 }
 
+/* 
 @media (min-width: 1100px) {
 
   .body_class {
@@ -251,6 +252,7 @@ body {
       "bottoms bottoms";
   }
 }
+ */
 
 .left-column {
   grid-column: 1;
