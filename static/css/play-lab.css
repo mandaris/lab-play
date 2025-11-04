@@ -80,6 +80,7 @@
   src: url("/fonts/AtkinsonHyperlegibleNext-Regular.woff2") format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -109,7 +110,7 @@
 
 @view-transition {
   navigation: auto;
-  duration: 0s;
+  duration: var(--standard-transition, 0.5s);
 }
 
 ::view-transition-old(root),
@@ -204,7 +205,7 @@ body {
 
 @container (min-width: 40ch) {
   .author-wrapper {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-areas:
       "author-image author-bio";
   }
@@ -228,7 +229,7 @@ body {
 .body_class {
   display: grid;
   gap: min(8px, 1rem);
-  grid-template-columns: minmax(300px, 65ch);
+  grid-template-columns: minmax(300px, 75ch);
   grid-template-areas:
     "topping"
     "contentSection"
@@ -238,6 +239,7 @@ body {
   background-color: var(--background);
 }
 
+/* 
 @media (min-width: 1100px) {
 
   .body_class {
@@ -251,6 +253,7 @@ body {
       "bottoms bottoms";
   }
 }
+ */
 
 .left-column {
   grid-column: 1;
@@ -381,7 +384,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 1em;
 }
 
 h2, h3, h4, h5, h6 {
@@ -967,10 +970,6 @@ details {
 
 summary {
   margin-inline-start: 1rem;
-}
-
-.accent-color {
-  color: var(--accent);
 }
 
 /* Form controls */

@@ -214,3 +214,10 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.6.06
 - Minor changes to transition behavior
+
+1.7.00
+- Move "About to" the bottom and change space allocation.
+- Remove color from category separator.
+- Shrink `h1` size to reduce user focus.
+- Added `font-display: fallback;` so that the page can render faster.
+

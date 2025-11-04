@@ -2,13 +2,13 @@
 <footer class="article-footer">
     <p class="left-column">
     {{- with .Param "categories" -}}
-    {{ range $CategoryArray, $Category := (. | sort) -}}
+    {{- range $CategoryArray, $Category := (. | sort) -}}
         {{- if gt $CategoryArray 0 -}}
         <span class="accent-color"> •</span>
         {{- end }}
         <a href="/categories/{{ $Category | urlize }}" 
           class="p-category articleSection lozenge" rel="tag"
-          aria-label="Archive of post with the {{ $Category }} category."
+          aria-label="Archive of posts with the {{ $Category }} category."
           itemprop="articleSection">
             {{ $Category }}
         </a>
@@ -21,12 +21,16 @@
     {{ with $.Param "categories"}}
     <br />
     {{ end }}
-        <span itemprop="keywords">
-          {{ range $index, $tag := (. | sort) }} 
-              {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
-                  <a href="{{ .Permalink }}" class="tag">{{ $tag | urlize }}</a>
-              {{ end }}
-          {{ end }}
+    <span itemprop="keywords">
+        {{- range $index, $tag := (. | sort) }} 
+        {{- with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+        <a href="{{ .Permalink }}" 
+          class="tag lozenge"
+          aria-label="Archive of posts with the {{ $tag }} tag.">
+        	{{ $tag }}
+        </a>
+        {{- end }}
+        {{- end }}
         </span>
     {{- end }}
     <meta itemprop="wordCount" content="{{ .WordCount }}">    
