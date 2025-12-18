@@ -7,7 +7,7 @@
   </a>
   
   <nav id="Site" aria-label="Website" class="site-nav">
-  <menu>
+  <ul>
   {{- range .Site.Menus.main }} 
   <li>
     <a class="lozenge" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
@@ -19,6 +19,6 @@
     RSS
     </a>
   </li>
-</menu>
+</ul>
 </nav>
 </header>
