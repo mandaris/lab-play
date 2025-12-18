@@ -1,0 +1,16 @@
+{{- $types := slice "post" -}}
+{{- $documents := where .Site.Pages "Type" "in" $types -}}
+[
+{{- range $i, $document := $documents  -}}
+  {{ if $i }},{{ end }}
+  {
+    "id": {{ $i | jsonify }},
+    "type": {{ $document.Type | jsonify }},
+    "title": {{ $document.Title| jsonify }},
+    "text": {{ $document.Plain | jsonify }},
+    "dateiso": {{ $document.Date.Format "2006-01-02 15:04:05 -0700" | jsonify }},
+    "date": {{ $document.Date.Format "3:04 p.m. on Jan 2, 2006" | jsonify }},
+    "permalink": {{ $document.Permalink | jsonify }},
+  }
+{{- end }}
+]

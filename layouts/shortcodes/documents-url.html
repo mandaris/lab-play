@@ -1,0 +1,3 @@
+{{- $path := "documents.json" -}}
+{{- $documents := resources.Get $path |  resources.ExecuteAsTemplate $path . -}}
+{{- $documents.Permalink -}}?version={{- $documents.Content | md5 -}}

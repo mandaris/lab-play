@@ -201,10 +201,10 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Fix issue with rss
 
 1.6.02
-- Really fix rss. For real this time.
+- Really fix rss. For real this time
 
 1.6.03
-- This tims I _really_ fixed rss.
+- This tims I _really_ fixed rss
 
 1.6.04
 - Add Titles for micro posts in rss
@@ -216,8 +216,14 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Minor changes to transition behavior
 
 1.7.00
-- Move "About to" the bottom and change space allocation.
-- Remove color from category separator.
-- Shrink `h1` size to reduce user focus.
-- Added `font-display: fallback;` so that the page can render faster.
+- Move "About to" the bottom and change space allocation
+- Remove color from category separator
+- Shrink `h1` size to reduce user focus
+- Added `font-display: fallback;` so that the page can render fast er
 
+1.8.00
+- Add search to `index.html` using [Sod's plugin](https://github.com/svendahlstrand/plugin-search-space/) as a base
+- Add `view-transition-name` to `main`
+- Remove "Micro" from post titles without a title
+- Remove periods at the end of sentences in `README.md`
+- Small adjusts to `.highlight` of code blocks

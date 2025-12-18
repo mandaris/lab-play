@@ -1,9 +1,9 @@
 {{  define "main" }}
 {{- $pages := where site.RegularPages "Type" "post" }}
-{{- $pages = where $pages "Params.title" "ne" nil }}
+{{/* {{- $pages = where $pages "Params.title" "ne" nil }} */}}
 {{- $paginator := .Paginate $pages 10 }}
 {{- range $paginator.Pages }}
-{{ partial "article.html" . }}   
+{{ partial "article.html" . }}
 {{- end }}
 
 {{ partial "site-pagination.html" . }}
