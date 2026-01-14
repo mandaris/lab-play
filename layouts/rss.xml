@@ -31,7 +31,7 @@
 {{- $pages = $pages | first $limit }}
 {{- end }}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
@@ -41,6 +41,7 @@
     <managingEditor>{{.}}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with $authorEmail }}
     <webMaster>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with .Site.Copyright }}
     <copyright>{{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}
+    <atom:link href="{{ "feed.xml" | absURL }}" rel="self" type="application/rss+xml" />
     <lastBuildDate>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{- range $pages }}
     <item>
@@ -57,6 +58,16 @@
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Content | html }}</description>
+      {{ range .Params.categories }}
+            <category>{{ . }}</category>
+      {{ end }}
+      
+{{- with .Params.categories }}
+{{- range . }}
+<meta property="article:section" content="{{ . }}">
+{{- end }}
+{{ end }}
+      
     </item>
     {{- end }}
   </channel>

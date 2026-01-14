@@ -7,7 +7,7 @@
   style="view-transition-name: {{ .Permalink | relURL | anchorize }}">
 <header class="post-header">
 <a href="{{ .Permalink }}" class="u-url">
-  <h2 itemprop="headline" class="p-name">{{ .Title }}</h2>
+  <h2 itemprop="headline" class="p-name" data-pagefind-meta="title">{{ .Title }}</h2>
 </a>
 </header>
 {{ else }}
@@ -15,6 +15,7 @@
 {{ $ariaLabel :=  printf "MicroPost %s" $niceDate | printf "%s" }}
 <article class="object-effect | flow | h-entry | hentry | note-summary-view"
   aria-label="{{ $ariaLabel }}"
+  data-pagefind-body
   itemscope itemtype="https://schema.org/BlogPosting">
   <meta itemprop="headline" content="{{ $ariaLabel }}">
 {{ end }}

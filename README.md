@@ -204,7 +204,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Really fix rss. For real this time
 
 1.6.03
-- This tims I _really_ fixed rss
+- This time I _really_ fixed rss
 
 1.6.04
 - Add Titles for micro posts in rss
@@ -227,3 +227,8 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Remove "Micro" from post titles without a title
 - Remove periods at the end of sentences in `README.md`
 - Small adjusts to `.highlight` of code blocks
+
+1.8.01
+- Adjust label to correctly point to search query
+- Add `--standardfilter` to `highlight` class
+- Add icon to RSS link
