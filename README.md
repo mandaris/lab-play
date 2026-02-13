@@ -204,7 +204,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Really fix rss. For real this time
 
 1.6.03
-- This time I _really_ fixed rss
+- This time, I _really_ fixed rss
 
 1.6.04
 - Add Titles for micro posts in rss
@@ -232,3 +232,9 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Adjust label to correctly point to search query
 - Add `--standardfilter` to `highlight` class
 - Add icon to RSS link
+
+1.8.02
+- Adjustments to `details`
+- Change `author-info-aside.html` to `author-section.html`
+- Associate label for search
+- Various style changes

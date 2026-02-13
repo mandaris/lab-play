@@ -113,27 +113,20 @@
   duration: var(--standard-transition, 1s);
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
+
+::view-transition-old(*),
+::view-transition-new(*) {
   animation-duration: var(--standard-transition, 1s);
 }
-
-
 
 html {
   font-family: "Atkinson", ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, Verdana, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
   line-height: 1.6;
   font-size: 1.3rem;
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  /* text-size-adjust: none; */
-
-  -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
 
 body {
-  word-wrap: break-word;
   text-rendering: optimizeLegibility;
   margin: 3px;
 }
@@ -376,7 +369,7 @@ blockquote {
   margin-inline-end: .5em;
   margin-inline: 1em;
   overflow-y: auto;
-  box-shadow: 0 2px 4px var(--accent);
+  filter: var(--standard-filter);
   & footer {
     text-align: end;
     margin-inline-end: .5rem;
@@ -640,7 +633,7 @@ ul>li>input[type="checkbox"]:checked::before {
   border-radius: var(--border-radius);
   background: var(--accent-alt);
 
-  transition: all 0.25s allow-discrete;
+  transition: all 0.5s allow-discrete;
   opacity: 0;
   translate: 0 2em;
 }
@@ -982,7 +975,8 @@ details {
   border-radius: var(--border-radius, 0.5rem);
   filter: var(--standard-filter);
   background-color: var(--background-mid);
-  padding: min(10px, .5rem);
+  padding: min(10px, 1em);
+  margin-inline: min(10px, 1em);
 
   &::details-content {
     opacity: 0;
@@ -1000,7 +994,7 @@ details {
 }
 
 summary {
-  margin-inline-start: 1rem;
+/*   margin-inline-start: 1rem; */
 }
 
 /* Form controls */
